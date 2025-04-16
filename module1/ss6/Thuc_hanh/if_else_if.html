@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let input = prompt("Tên đăng nhập")
+  {
+    if (input === "Admin") {
+      let input2 = prompt("Nhập mật khẩu")
+      {
+        if (input2 === "TheMaster") {
+          document.write("Welcome!");
+        } else if (input2 === "null") {
+          document.write("Canceled");
+          } else {
+          document.write("Wrong password");
+        }
+      }
+      } else {
+      document.write("I don't know you!");
+    }
+  }
+</script>
+</body>
+</html>
+

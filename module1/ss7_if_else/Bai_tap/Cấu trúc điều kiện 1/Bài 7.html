@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+ <label> Nhập số phút gọi nội mạng <input type="number" id="noimang"> </label> <br>
+ <label> Nhập số phút gọi ngoại mạng <input type="number" id="ngoaimang"> </label> <br>
+ <label> <button id="result">Enter</button> </label>
+
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+      let noimang = +document.getElementById("noimang").value;
+      let ngoaimang = +document.getElementById("ngoaimang").value;
+      let result;
+
+      if (isNaN(noimang) || isNaN(ngoaimang)) {
+        alert('Vui lòng nhập đúng')
+      }else{
+        result = 25000 + (noimang * 800) + (ngoaimang * 1500);
+        alert(result);
+      }
+    }
+  )
+</script>
+</body>
+</html>

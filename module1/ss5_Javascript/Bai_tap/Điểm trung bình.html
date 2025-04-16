@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Điểm trung bình</title>
+</head>
+  <style>
+    label {
+      display: table;
+      background-color: burlywood;
+      width: 200px;
+      height: 50px;
+      margin: auto;
+      padding: 10px;
+    input {
+      display: table;
+      width: 190px;
+    }
+    button {
+    display: table;
+    width: 200px;
+    margin: auto;
+    align-self: center}
+    }
+    div {
+      display: table;
+      width: 200px;
+      height: 50px;
+      margin: auto;
+      text-align: center;
+      background-color: #2c3e50;
+      color: white;
+    }
+
+  </style>
+<body>
+
+<label> Điểm toán: <input type="number" id="math" min="0" max="10"> </label>
+<label> Điểm lý: <input type="number" id="phys" min="0" max="10"> </label>
+<label> Điểm hoá: <input type="number" id="chem" min="0" max="10"> </label>
+<label><button style="width: 100px" id="calculate">Tính</button></label>
+<br>
+<div id="result"></div>
+<div id="result2"></div>
+<script>
+
+  document.getElementById("calculate").addEventListener("click", function () {
+    let math = +document.getElementById('math').value;
+    let phys = +document.getElementById('phys').value;
+    let chem = +document.getElementById('chem').value;
+    if (
+      isNaN(math) || math < 0 || math > 10 ||
+      isNaN(phys) || phys < 0 || phys > 10 ||
+      isNaN(chem) || chem < 0 || chem > 10
+    ) {
+      document.getElementById("result").innerText = "Vui lòng nhập điểm hợp lệ từ 0 đến 10 cho tất cả các môn.";
+      return;
+    }
+
+    let avg = (math + phys + chem) / 3;
+    if (avg >= 8) {
+      document.getElementById("result2").innerHTML = "Giỏi"
+    } else if (avg >= 6.5) {
+      document.getElementById("result2").innerHTML = "Khá"
+    } else if (avg >= 5) {
+      document.getElementById("result2").innerHTML = "Trung bình"
+    } else if (avg < 5) {
+      document.getElementById("result2").innerHTML = "Yếu"
+    }
+    document.getElementById("result").innerHTML = "Average=" + avg;
+  })
+
+
+</script>
+</body>
+
+</html>

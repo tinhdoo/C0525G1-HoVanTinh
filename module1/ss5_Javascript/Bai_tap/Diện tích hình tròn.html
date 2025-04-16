@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>(P)</title>
+</head>
+<body>
+    <b> Nhập bán kính: </b>
+    <input type="number" id="r">
+    <button id="result"> Enter</button>
+    <p id="output"></p>
+</body>
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+    let bankinh = +document.getElementById("r").value;
+    let dientich = +3.14159 * (bankinh ^ 2);
+    document.getElementById("output").innerText = "Diện tích hình tròn=" + dientich + "m²" ;
+  })
+</script>
+</html>

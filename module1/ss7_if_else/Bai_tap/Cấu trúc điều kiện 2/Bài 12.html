@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính lãi ngân hàng</title>
+  <style>
+    body {
+      background-color: #ffcccc;
+    }
+    table {
+      border-collapse: collapse;
+      color: red;
+      margin: auto;
+    }
+    th, td {
+      border: 1px solid black;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th colspan="2" style="background-color: green; color: white">Tính lãi ngân hàng</th>
+  </tr>
+  <tr>
+    <td>Tiền vay ban đầu</td>
+    <td><input style="text-align: center" id="begin" type="number"></td>
+  </tr>
+  <tr>
+    <td>Kỳ hạn</td>
+    <td>
+      <select style="text-align: center" id="month">
+        <option value="3">3 tháng</option>
+        <option value="6">6 tháng</option>
+        <option value="9">9 tháng</option>
+        <option value="12">12 tháng</option>
+        <option value="18">18 tháng</option>
+        <option value="21">21 tháng</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Lãi suất</td>
+    <td><input id="interest" type="number" style="width: 83.7px"> %</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button style="width: 100%; background-color: fuchsia" id="result">Tính lãi</button>
+    </td>
+  </tr>
+  <tr>
+    <td>Tổng tiền sau kỳ hạn</td>
+    <td id="total">--</td>
+  </tr>
+  <tr>
+    <td>Tiền lãi nhận được</td>
+    <td id="profit">--</td>
+  </tr>
+</table>
+
+<script>
+  document.getElementById("result").onclick = function () {
+    let begin = parseFloat(document.getElementById("begin").value);
+    let month = parseInt(document.getElementById("month").value);
+    let interest = parseFloat(document.getElementById("interest").value);
+
+    if (isNaN(begin) || isNaN(interest)) {
+      alert("Vui lòng nhập đầy đủ số tiền và lãi suất!");
+      return;
+    }
+
+    let rate = interest / 100;
+    let total = begin * Math.pow(1 + rate, month);
+    let profit = total - begin;
+
+    document.getElementById("total").innerText = total.toFixed(2) + " VND";
+    document.getElementById("profit").innerText = profit.toFixed(2) + " VND";
+  };
+</script>
+
+</body>
+</html>

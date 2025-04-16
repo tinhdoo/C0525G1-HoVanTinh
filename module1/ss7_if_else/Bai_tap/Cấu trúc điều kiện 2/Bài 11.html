@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<label>Thu nhập (VND): <input type="number" id="thu-nhap"></label>
+<button id="result">Enter</button>
+<p id="output"></p>
+
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+    let thuNhap = +document.getElementById("thu-nhap").value;
+    let result = 0;
+    let output = document.getElementById("output");
+
+    if (isNaN(thuNhap) || thuNhap <= 0) {
+      alert('Vui lòng nhập lại')
+      return;
+    }
+
+    if (thuNhap <= 5000000) {
+      result = thuNhap * 0.05;
+      alert('Thuế phải trả là: ' + result.toFixed(5));
+    } else if (thuNhap <= 10000000) {
+      result = 5000000 * 0.05 + (thuNhap - 5000000) * 0.10;
+      alert('Thuế phải trả là: ' + result.toFixed(5));
+    } else if (thuNhap <= 18000000) {
+      result = 5000000 * 0.05 + 5000000 * 0.10 + (thuNhap - 10000000) * 0.15;
+      alert('Thuế phải trả là: ' + result.toFixed(5));
+    } else if (thuNhap <= 32000000) {
+      result = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + (thuNhap - 18000000) * 0.20;
+      alert('Thuế phải trả là: ' + result.toFixed(5));
+    } else if (thuNhap <= 52000000) {
+      result = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + (thuNhap - 32000000) * 0.25;
+      alert('Thuế phải trả là: ' + result.toFixed(5));
+    } else if (thuNhap <= 80000000) {
+      result = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + 20000000 * 0.25 + (thuNhap - 52000000) * 0.30;
+      alert('Thuế phải trả là: ' + result.toFixed(5));
+    } else {
+      result = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + 20000000 * 0.25 + 28000000 * 0.30 + (thuNhap - 80000000) * 0.35;
+      alert('Thuế phải trả là: ' + result.toFixed(5));
+    }
+
+  });
+</script>
+</body>
+</html>

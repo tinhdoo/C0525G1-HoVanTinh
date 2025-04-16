@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+</style>
+<body>
+<table>
+  <tr>
+    <td>Nhập chiều dài</td>
+
+    <label>
+      <td><input id="canh-a" type="number"></td>
+    </label>
+  </tr>
+
+  <tr>
+    <td>Nhập chiều rộng</td>
+    <label>
+      <td><input id="canh-b" type="number"></td>
+    </label>
+  </tr>
+  <td>
+    <label>
+      <button id="result">Enter</button>
+    </label>
+  </td>
+</table>
+<script>
+  document.getElementById('result').addEventListener('click', function () {
+      let canhA = document.getElementById('canh-a').value;
+      let canhB = document.getElementById('canh-b').value;
+      let result;
+      if (isNaN(canhA) || isNaN(canhB) || canhA === "" || canhB === "") {
+        alert('Lỗi');
+      } else if(canhA < 0 || canhB < 0) {
+        alert('Giá trị phải lớn hơn hoặc bằng 0')
+      } else {
+        result = (canhA * canhB);
+        alert(result + "" + "m" + "²");
+      }
+    }
+  )
+</script>
+</body>
+</html>

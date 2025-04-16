@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1> Tính giá điện </h1>
+  <label> Tổng điện năng tiêu thụ (kWh) <input id="san-luong" type="number"> </label>
+  <label> <button id="result"> Enter </button></label>
+
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+      let sanLuong = document.getElementById("san-luong").value;
+      let result;
+
+      if (sanLuong === "") {
+        alert('Trống')
+      } else if (sanLuong <= 0 || isNaN(sanLuong)) {
+        alert('Vui lòng nhập lại')
+
+         } else if (sanLuong > 300) {
+          result = 50 * 1893 + 50 * 1956 + 100 * 2271 + 100 * 2860 + (sanLuong - 300) * 3197
+          alert("Tổng tiền cần thanh toán là " + result + "" + "VNĐ");
+        } else if (sanLuong > 200) {
+          result = 50 * 1893 + 50 * 1956 + 100 * 2271 + (sanLuong - 200) * 2860
+          alert("Tổng tiền cần thanh toán là " + result + "" + "VNĐ");
+        } else if (sanLuong > 100) {
+          result = 50 * 1893 + 50 * 1956 + (sanLuong - 100) * 2271
+          alert("Tổng tiền cần thanh toán là " + result + "" + "VNĐ");
+        } else if (sanLuong > 50) {
+          result = 50 * 1893 + (sanLuong - 50) * 1956
+          alert("Tổng tiền cần thanh toán là " + result + "" + "VNĐ");
+        } else {
+          result = sanLuong * 1893
+          alert("Tổng tiền cần thanh toán là " + result + "" + "VNĐ");
+        }
+
+      }
+  )
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1> Giải phương trình bậc 1 </h1>
+<h2> ax + b = 0 </h2>
+<table>
+  <tr>
+    <td>Nhập a</td>
+
+      <td> <label><input id="numa" type="number"></label></td>
+  </tr>
+
+  <tr>
+    <td>Nhập b</td>
+      <td>   <label><input id="numb" type="number"></label></td>
+
+  </tr>
+  <td>
+    <label>
+      <button id="result">Enter</button>
+    </label>
+  </td>
+</table>
+
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+    let a = +document.getElementById("numa").value;
+    let b = +document.getElementById("numb").value;
+    let result;
+
+    if (isNaN(a) || isNaN(b)){
+      alert('Không hợp lệ');
+    }
+
+    if ( a === 0){
+      if (b === 0) {
+        alert('Phương trình có vô số nghiệm')
+      }else{
+        alert('Phương trình vô nghiệm')
+        }
+      } else {
+      result = -b / a;
+      alert("Nghiệm x" + "=" +result);
+    }
+  }
+  )
+</script>
+</body>
+</html>

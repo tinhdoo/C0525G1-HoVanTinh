@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Đổi tiền</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    padding: 20px;
+  }
+
+  td {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+</style>
+<body>
+<table>
+  <tr>
+    <td>
+      Amount<br>
+      <input type="number" id="amount">
+
+    <td> From currency
+      <select id="from">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+    </td>
+
+    <td>To currency
+      <select id="to">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<button onclick="changeAmount()"> Convert</button>
+<p id="Result"> Result</p>
+</body>
+<script>
+
+  function changeAmount() {
+
+    let amount = +document.getElementById("amount").value;
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    let Result;
+
+    if (amount <0 || isNaN(amount)) {
+      alert('Vui lòng nhập lại')
+      return;
+    }
+    if (amount.toString().length < 1 || amount.toString().length > 10) {
+      alert('Quá ký tự');
+      return;
+
+    }
+
+
+    if (from === "USD" && to === "VND") {
+      Result = "Result: " + (amount * 25000) + " Đ";
+    } else if (from === "VND" && to === "USD") {
+      Result = "Result: " + (amount / 25000) + " $";
+    } else if (from === "VND") {
+      Result = "Result: " + amount + " Đ"
+    } else {
+      Result = "Result: " + amount + " $"
+    }
+
+    document.getElementById("Result").innerHTML = Result;
+
+
+  }
+</script>
+
+</html>

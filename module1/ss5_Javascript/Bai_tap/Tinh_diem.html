@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính điểm</title>
+</head>
+<style>
+  input{
+    border-collapse: inherit;
+    background-color:bisque ;
+    margin: auto;
+    width: 110px;
+  }
+</style>
+<body>
+
+Điểm lý: <input type="number" id="phys">
+Điểm hoá:   <input type="number" id="chem">
+Điểm sinh:  <input type="number" id="bio">
+<button id="calculate">Tính</button>
+<p id="result"></p>
+
+<script>
+  document.getElementById("calculate").addEventListener("click",
+    function () {
+      let phys = +document.getElementById('phys').value;
+      let chem = +document.getElementById('chem').value;
+      let bio = +document.getElementById('bio').value;
+      let total = bio + phys + chem;
+      let avg = (bio + phys + chem) / 3;
+
+      document.getElementById("result").innerText =
+        "Tổng điểm: " + total + "\nĐiểm trung bình: " + avg.toFixed(2);
+    })
+
+</script>
+
+</body>
+</html>

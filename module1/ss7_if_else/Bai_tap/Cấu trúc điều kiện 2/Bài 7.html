@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1> Giải phương trình bậc 2</h1>
+<h2> ax2 + bx + c = 0 </h2>
+<table>
+  <tr>
+    <td>Nhập a</td>
+    <td><label><input id="numa" type="number"> </label></td>
+  </tr>
+
+  <tr>
+    <td>Nhập b</td>
+
+    <td><label><input id="numb" type="number"> </label></td>
+  </tr>
+
+  <tr>
+    <td>Nhập c</td>
+    <td><label><input id="numc" type="number"> </label></td>
+
+  </tr>
+
+  <td>
+    <label>
+      <button id="result">Enter</button>
+    </label>
+  </td>
+</table>
+<p id="output"></p>
+
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+    let aValue = document.getElementById("numa").value.trim();
+    let bValue = document.getElementById("numb").value.trim();
+    let cValue = document.getElementById("numc").value.trim();
+
+    if (aValue === "" || bValue === "" || cValue === "") {
+      document.getElementById("output").textContent = "Vui lòng nhập đầy đủ a, b, c.";
+      return;
+    }
+
+    let a = parseFloat(aValue);
+    let b = parseFloat(bValue);
+    let c = parseFloat(cValue);
+
+    if (a === 0) {
+      if (b === 0) {
+        document.getElementById("output").textContent = c === 0 ? "Vô số nghiệm" : "Phương trình vô nghiệm";
+      } else {
+        let x = -c / b;
+        document.getElementById("output").textContent = `Phương trình bậc nhất: x = ${x.toFixed(2)}`;
+      }
+      return;
+    }
+
+    let delta = b * b - 4 * a * c;
+    let resultText = "";
+
+    if (delta < 0) {
+      resultText = "Phương trình vô nghiệm thực.";
+    } else if (delta === 0) {
+      let x = -b / (2 * a);
+      resultText = `Phương trình có nghiệm kép: x₁ = x₂ = ${x.toFixed(2)}`;
+    } else {
+      let x1 = (-b - Math.sqrt(delta)) / (2 * a);
+      let x2 = (-b + Math.sqrt(delta)) / (2 * a);
+      resultText = `Phương trình có 2 nghiệm phân biệt:\nx₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}`;
+    }
+
+    document.getElementById("output").textContent = resultText;
+  });
+</script>
+</body>
+</html>

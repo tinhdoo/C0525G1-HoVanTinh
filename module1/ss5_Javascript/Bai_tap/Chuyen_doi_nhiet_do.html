@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CtoF</title>
+</head>
+<body>
+  <input type="number" id="C"> độ C <br>
+  <button id="result"> Enter</button>
+  <p id="output"> Kết quả</p>
+</body>
+  <script>
+    document.getElementById("result").addEventListener("click", function () {
+      let doC = +document.getElementById('C').value;
+      let doF = (9 * doC) / 5 + 32;
+      document.getElementById("output").innerText = doC + "độ C = " + doF.toFixed(2) + "độ F";
+    })
+  </script>
+
+
+</html>

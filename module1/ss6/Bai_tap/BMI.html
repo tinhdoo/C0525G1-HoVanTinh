@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    background-color: lightgray;
+    color: #2c3e50;
+    width: 100px;
+  }
+
+  tr, th, td {
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+  }
+</style>
+<body>
+<table style="width:100%">
+  <tr>
+    <td> Cân nặng</td>
+    <td><label for="weight"><input type="number" id="weight"></label></td>
+  </tr>
+  <tr>
+    <td> Chiều cao</td>
+    <td>
+      <label for="height"><input type="number" id="height"></label>
+    </td>
+  </tr>
+</table>
+<button id="Enter">Enter</button>
+<script>
+  document.getElementById("Enter").addEventListener("click", function () {
+      let weight = Number(document.getElementById("weight").value);
+      let height = Number(document.getElementById("height").value);
+
+      if (weight < 20 || weight > 300) {
+        alert('Vui lòng nhập lại cân nặng');
+        return;
+      } else if (height < 20 || height > 250) {
+        alert('Vui lòng nhập lại chiều cao')
+        return;
+      }
+
+      let BMI = weight / ((height / 100) * (height / 100));
+
+      if (BMI < 18.5) {
+        alert("Gầy");
+      } else if (BMI < 25.0) {
+        alert("Bình thường");
+      } else if (BMI < 30.0) {
+        alert("Mập");
+      } else {
+        alert("Quá cỡ");
+      }
+    }
+  )
+
+</script>
+</body>
+</html>

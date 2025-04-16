@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label> Nhập doanh số <input id="doanhSo" type="number"> </label>
+<label> <button id="result"> Enter </button></label>
+  <script>
+      document.getElementById("result").addEventListener("click", function () {
+       let doanhSo = +document.getElementById("doanhSo").value;
+       let result;
+          if (doanhSo < 0) {
+            alert('Doanh số phải lớn hơn hoặc bằng 0');
+          } else if (doanhSo < 10000000) {
+            result = doanhSo * 0.02;
+            alert("Hoa hồng của bạn là:" + result +"VND");
+          } else if (doanhSo <= 50000000) {
+            result = doanhSo * 0.05;
+            alert("Hoa hồng của bạn là:" + result +"VND");
+            } else {
+            result = doanhSo * 0.1;
+            alert("Hoa hồng của bạn là:" + result +"VND");
+          }
+          result.innerHTML = result;
+        }
+      )
+  </script>
+</body>
+</html>

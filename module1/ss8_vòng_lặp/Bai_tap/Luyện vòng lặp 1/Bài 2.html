@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let i = Number(prompt('Nhập nhiệt độ'));
+
+  while (isNaN(i) || i < 20 || i > 100) {
+    if (isNaN(i)) {
+      i = Number(prompt('Hãy nhập một số hợp lệ'));
+      continue;
+    }
+    if (i < 20) {
+      alert('Hãy tăng nhiệt độ');
+    } else if (i > 100) {
+      alert('Hãy giảm nhiệt độ');
+    }
+  }
+  alert('Nhiệt độ hiện tại là :' + i);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Máy tính</title>
+</head>
+<body>
+<h1> Caculator </h1>
+  <table id="total">
+    <tr>
+      <td>
+        <input id="number" type="number">
+        <input id="number2" type="number">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="add()"> Cộng</button>
+        <button onclick="minus()"> Trừ</button>
+        <button onclick="core()"> Nhân</button>
+        <button onclick="divide()"> Chia</button>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <div id="result"></div>
+</body>
+<script>
+  function add() {
+    let number = document.getElementById("number").value;
+    let number2 = document.getElementById("number2").value;
+    let result = Number(number) + Number(number2);
+    document.getElementById("result").innerHTML = "Kết quả :" + result;
+  }
+  function minus() {
+    let number = document.getElementById("number").value;
+    let number2 = document.getElementById("number2").value;
+    let result = Number(number) - Number(number2);
+    document.getElementById("result").innerHTML = "Kết quả :" + result;
+  }
+  function core() {
+    let number = document.getElementById("number").value;
+    let number2 = document.getElementById("number2").value;
+    let result = Number(number) * Number(number2);
+    document.getElementById("result").innerHTML = "Kết quả :" + result;
+  }
+  function divide() {
+    let number = document.getElementById("number").value;
+    let number2 = document.getElementById("number2").value;
+    let result = Number(number) / Number(number2);
+    document.getElementById("result").innerHTML = "Kết quả :" + result;
+  }
+</script>
+
+
+</html>

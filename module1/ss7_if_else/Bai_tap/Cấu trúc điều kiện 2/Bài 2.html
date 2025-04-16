@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label> Nhập kích thước <input id="met" type="number"> mét </label>
+<label>
+  <button id="result">Enter</button>
+</label>
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+      let met = +document.getElementById("met").value;
+      let result;
+
+      if (isNaN(met) || met <=0 || met > 1000000000 ) {
+        alert('Vui lòng nhập lại');
+      } else {
+        result = met * 3.2808;
+        alert(result + "ft");
+      }
+    }
+  )
+</script>
+</body>
+</html>

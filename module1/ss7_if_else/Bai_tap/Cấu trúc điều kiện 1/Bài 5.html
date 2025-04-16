@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+</head>
+<body>
+Điểm bài kiểm tra <label><input id="diem1" type="number"/></label> Điểm thi
+giữa kỳ <label> <input id="diem2" type="number"/></label> Điểm thi cuối kỳ
+<label> <input id="diem3" type="number"/></label>
+<button id="result">Enter</button>
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+    let diem1 = +document.getElementById("diem1").value;
+    let diem2 = +document.getElementById("diem2").value;
+    let diem3 = +document.getElementById("diem3").value;
+    let result = diem1 * 0.2 + diem2 * 0.3 + (diem3 * 0.5);
+
+    if (isNaN(diem1) || isNaN(diem2) || isNaN(diem3) || diem1 < 0 || diem1 > 10 || diem2 < 0 || diem2 > 10 || diem3 < 0 || diem3 > 10) {
+      alert("Vui lòng nhập lại điểm");
+      return;
+    }
+
+    if (result >= 8) {
+      alert("Xếp loại giỏi");
+    } else if (result >= 6.5) {
+      alert("Xếp loại khá");
+    } else {
+      alert("Xếp loại trung bình");
+    }
+  });
+</script>
+</body>
+
+</html>

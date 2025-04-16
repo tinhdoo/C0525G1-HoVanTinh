@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1> Tính diện tích tam giác vuông</h1>
+<table>
+  <tr>
+    <td>Chiều dài cạnh a</td>
+
+    <label>
+      <td><input id="canh-a" type="number"></td>
+    </label>
+  </tr>
+
+  <tr>
+    <td>Chiều dài cạnh b</td>
+    <label>
+      <td><input id="canh-b" type="number"></td>
+    </label>
+  </tr>
+  <td>
+    <label>
+      <button id="result">Enter</button>
+    </label>
+  </td>
+</table>
+
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+    let canha = +document.getElementById("canh-a").value;
+    let canhb = +document.getElementById("canh-b").value;
+    let result;
+
+    if (isNaN(canha) || isNaN(canhb)) {
+      alert('Vui lòng nhập lại');
+    } else if (canha <= 0 || canhb <= 0) {
+      alert ('Vui lòng nhập lại');
+      } else {
+      result = 1/2 * (canha * canhb);
+      alert(result + "m" + "²")
+    }
+  }
+  )
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  }
+
+  let count = 0;
+  let number = 2;
+  let result = "";
+
+  while (count < 20) {
+    if (isPrime(number)) {
+      result += number + "<br>";
+      count++;
+    }
+    number++;
+  }
+  document.writeln(result);
+</script>
+
+</body>
+</html>

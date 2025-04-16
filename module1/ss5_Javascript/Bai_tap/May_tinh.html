@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Máy tính nâng cao</title>
+  <style>
+    * {
+      font-size: 1em;
+    }
+
+    table {
+      width: 400px;
+      height: 500px;
+    }
+
+    button {
+      width: 100px;
+      height: 100px;
+    }
+
+    input {
+      width: 409px;
+      height: 50px;
+      font-size: 1.5em;
+    }
+
+    button:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <tr>
+    <td colspan="4"><input id="result" type="text"></td>
+  </tr>
+  <tr>
+    <td>
+      <button id="7" onclick="input(this.id)">7</button>
+    </td>
+    <td>
+      <button id="8" onclick="input(this.id)">8</button>
+    </td>
+    <td>
+      <button id="9" onclick="input(this.id)">9</button>
+    </td>
+    <td>
+      <button id="*" onclick="input(this.id)">*</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button id="4" onclick="input(this.id)">4</button>
+    </td>
+    <td>
+      <button id="5" onclick="input(this.id)">5</button>
+    </td>
+    <td>
+      <button id="6" onclick="input(this.id)">6</button>
+    </td>
+    <td>
+      <button id="/" onclick="input(this.id)">/</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button id="1" onclick="input(this.id)">1</button>
+    </td>
+    <td>
+      <button id="2" onclick="input(this.id)">2</button>
+    </td>
+    <td>
+      <button id="3" onclick="input(this.id)">3</button>
+    </td>
+    <td>
+      <button id="+" onclick="input(this.id)">+</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button id="C" onclick="input(this.id)">C</button>
+    </td>
+    <td>
+      <button id="0" onclick="input(this.id)">0</button>
+    </td>
+    <td>
+      <button id="bang" onclick="input(this.id)">=</button>
+    </td>
+    <td>
+      <button id="-" onclick="input(this.id)">-</button>
+    </td>
+  </tr>
+</table>
+</body>
+<script>
+  function input(id) {
+    let resultInput = document.getElementById("result");
+
+    if (id === "C") {
+      resultInput.value = "";
+    } else if (id === "bang") {
+      try {
+        resultInput.value = eval(resultInput.value);
+      } catch {
+        resultInput.value = "Lỗi";
+      }
+    } else {
+      resultInput.value += id;
+    }
+  }
+
+</script>
+</html>

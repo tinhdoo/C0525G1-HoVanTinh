@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+</head>
+  <STYLE>
+    body {
+      background-color: cyan;
+      font-family: Arial, sans-serif;
+    }
+
+    .form {
+      width: 600px;
+      background-color: white;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .OP {
+      background: red;
+      color: white;
+      height: 50px;
+      text-align: center;
+    }
+
+    .hobby {
+      font-size: 20px;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    .label {
+      text-align: right;
+      color: blue;
+      font-weight: bold;
+      width: 90px;
+    }
+
+    .checkbox-label {
+      color: orangered;
+      margin-right: 20px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .hobby-table td {
+      width: 33%;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+  </STYLE>
+<body>
+<div class="form">
+<div class="OP">
+  <div class="hobby"> SỞ THÍCH CỦA BẠN </div>
+</div>
+
+<form>
+  <table>
+        <tr>
+          <td class="label"><label>Họ và tên</label></td>
+    <td>
+      <input type = "text">
+      </tr>
+    </label>
+    </td>
+    <tr>
+      <td class="label"><label>Email</label></td>
+      <td>
+        <input type = "email">
+      </label></td>
+    </tr>
+    <tr>
+      <td class="label">Sở thích</td>
+      <td>
+        <table>
+          <td>
+            <input type="checkbox"><span class="checkbox-label">Thể thao</span><br>
+            <input type="checkbox"><span class="checkbox-label">Lướt web</span><br>
+            <input type="checkbox"><span class="checkbox-label">Du lịch</span>
+          </td>
+
+          <td>
+            <input type="checkbox"><span class="checkbox-label">Âm nhạc</span><br>
+            <input type="checkbox"><span class="checkbox-label">Chơi game</span>
+          </td>
+
+          <td>
+            <input type="checkbox"><span class="checkbox-label">Đọc sách</span><br>
+            <input type="checkbox"><span class="checkbox-label">Điện ảnh</span>
+          </td>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <div class="buttons">
+     <input type="submit" value="Gửi thông tin">
+     <input type="reset" value="Nhập lại">
+  </div>
+
+
+</form>
+
+  </div>
+</body>
+</html>
+
+
+

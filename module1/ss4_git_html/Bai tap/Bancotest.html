@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bàn cờ</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      background-color: orange;
+    }
+
+    td, th {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .black {
+      background-color: black;
+    }
+
+    .white {
+      background-color: white;
+    }
+
+    .label {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td class="label"></td>
+    <!-- Số 1 đến 8 -->
+    <script>
+      for (let i = 1; i <= 8; i++) {
+        document.write('<td class="label">' + i + '</td>');
+      }
+    </script>
+  </tr>
+
+  <script>
+    const rows = ['A','B','C','D','E','F','G','H'];
+    for (let i = 0; i < 8; i++) {
+      document.write('<tr>');
+      // Nhãn dòng A–H
+      document.write('<td class="label">' + rows[i] + '</td>');
+      for (let j = 0; j < 8; j++) {
+        // Xen kẽ trắng đen
+        const color = (i + j) % 2 === 0 ? 'white' : 'black';
+        document.write('<td class="' + color + '"></td>');
+      }
+      document.write('</tr>');
+    }
+  </script>
+</table>
+
+</body>
+</html>

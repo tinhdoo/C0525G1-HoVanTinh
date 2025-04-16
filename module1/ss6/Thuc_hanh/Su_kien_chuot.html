@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img id="ball" src="ball.png"alt="Ball" style="width: 200px">
+<button onclick="myFunction()">Click me</button>
+</body>
+<script>
+    let ball =null
+    ball = document.getElementById('ball')
+    function myFunction() {
+      ball = document.getElementById('ball');
+      ball.style.position = 'absolute';
+      ball.style.left = '0px';
+    }
+    function moveright() {
+      ball.style.left = parseInt(ball.style.left) + 10 + 'px';
+    }
+    window.onload = myFunction;
+
+
+</script>
+</html>

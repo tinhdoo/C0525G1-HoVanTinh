@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1> Tính diện tích hình vuông </h1>
+ <label>Nhập chiều dài cạnh:  <input id="canh" type ="number"></label>
+ <label> <select id="chon"> <option> cm </option> <option>dm</option><option>m</option></select> </label>
+ <label> <button id="result">Enter</button></label>
+
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+    let canh = +document.getElementById("canh").value;
+    let chon = document.getElementById("chon").value;
+    let result;
+
+      if (isNaN(canh) || canh < 0) {
+        alert("Vui lòng nhập cạnh hợp lệ");
+        return;
+      }
+      result = canh * canh;
+      alert("Diện tích: " + result + " " + chon + "²");
+  }
+  )
+</script>
+</body>
+</html>

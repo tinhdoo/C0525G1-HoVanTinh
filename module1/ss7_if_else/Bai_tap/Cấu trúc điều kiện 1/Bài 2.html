@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input id="tuoi" type="number" max="100" min="0">
+<button id="result">Tính</button>
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+      let tuoi = +document.getElementById("tuoi").value;
+      if (tuoi < 0) {
+        alert('Nhập lại')
+      } else {
+        if (tuoi === 15) {
+          alert('Đủ tuổi');
+        } else if (tuoi > 15) {
+          alert('Qúa tuổi');
+        } else {
+          alert('Chưa đủ tuổi')
+        }
+      }
+    }
+  )
+</script>
+</body>
+</html>
