@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let numA = parseInt(prompt('Nhập số a'))
+  let numB = parseInt(prompt('Nhập số b'))
+  let numC = parseInt(prompt('Nhập số c'))
+
+  function kiemTra() {
+    if (isNaN(numA) || isNaN(numB) || isNaN(numC)) {
+      alert('Vui lòng nhập số hợp lệ')
+      return;
+    }
+
+
+    function findMin() {
+      let min = numA
+      if (min > numB) {
+        min = numB;
+      }
+      if (min > numC) {
+        min = numC;
+      }
+      document.write("Số nhỏ nhất là:" + " " + `${min}`)
+    }
+
+
+    findMin();
+  }
+
+  kiemTra();
+</script>
+</body>
+</html>

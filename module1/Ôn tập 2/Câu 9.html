@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //kiểm tra sắp xếp tăng giảm
+  // Nhập số lượng phần tử
+  let n = Number(prompt("Nhập số lượng phần tử:"));
+
+  // Nhập mảng từ bàn phím
+  let arr = [];
+  for (let i = 0; i < n; i++) {
+    let x = Number(prompt(`Nhập phần tử thứ ${i + 1}:`));
+    arr.push(x);
+  }
+
+  // Hiển thị mảng sau khi nhập
+  console.log("Mảng vừa nhập:", arr);
+
+  // Hàm kiểm tra tăng dần
+  function isIncreasing(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) return false;
+    }
+    return true;
+  }
+
+  // Hàm kiểm tra giảm dần
+  function isDecreasing(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] < arr[i + 1]) return false;
+    }
+    return true;
+  }
+
+  // Kiểm tra mảng
+  if (isIncreasing(arr) || isDecreasing(arr)) {
+    console.log("OK");
+  } else {
+    console.log("NO");
+  }
+
+</script>
+</body>
+</html>

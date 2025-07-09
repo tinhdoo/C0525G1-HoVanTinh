@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+<h2> Từ điển </h2>
+<label> <input id="input" type="text" placeholder="Nhập từ tiếng anh"></label>
+<button id="Result">Enter</button>
+<pre id="output"></pre>
+
+<script>
+  document.getElementById('Result').addEventListener('click', function () {
+    let output = document.getElementById("output");
+    let input = document.getElementById('input').value;
+    let Eng = ['hello', 'goodbye', 'phone', 'name', 'age']
+    let viet = ['xin chào', 'tạm biệt', 'điện thoại', 'tên', 'tuổi']
+
+    let index = -1;
+    for (let i = 0; i < Eng.length; i++) {
+      if (Eng[i] === input) {
+        index = i;
+        break;
+      }
+    }
+    if (index !== -1) {
+      output.textContent = (viet[index]);
+    } else {
+      output.textContent = ('Không tìm thấy');
+    }
+  })
+</script>
+
+</body>
+</html>

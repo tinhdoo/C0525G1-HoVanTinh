@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let strA = prompt('Nhập chuỗi a');
+  let strB = prompt('Nhập chuỗi b');
+  arrA = strA.split("");
+  arrB = strB.split("");
+  let isFind = true;
+  for (let i = 0; i < arrA.length; i++) {
+
+    if (arrA[i] !== arrB[i]) {
+      isFind = false;
+      break;
+
+    }
+  }
+      if (isFind === true) {
+        document.write("Hai chuỗi giống nhau")
+      } else {
+        document.write("Hai chuỗi khác nhau")
+    }
+
+</script>
+</body>
+</html>

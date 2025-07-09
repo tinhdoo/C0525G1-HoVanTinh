@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  // Kiểm tra các cặp số liền kề
+  function checkNum() {
+    let n;
+    do {
+      n = parseInt(prompt("Nhập số lượng phần tử (phải là số chẵn): "));
+    } while (n % 2 !== 0);
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+      let x = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+      arr.push(x);
+    }
+    console.log(arr);
+    let ok = true;
+
+    for (let i = 0; i < arr.length; i += 2) {
+      if (arr[i] < arr[i + 1]) {
+        ok = false;
+        break;
+      }
+    }
+    if (ok) {
+      console.log("OK");
+    } else {
+      console.log("NO")
+    }
+  }
+  checkNum();
+</script>
+</body>
+</html>

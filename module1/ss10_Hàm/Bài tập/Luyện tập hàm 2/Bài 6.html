@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let input = prompt("Enter a number");
+
+  function numBer() {
+    if (isNaN(parseFloat(+input))) {
+      alert("Người dùng nhập không phải số")
+    } else if (+input < 0) {
+      document.write('False')
+    } else if (+input === 0) {
+      document.write('là số 0')
+    } else {
+      document.write('True')
+    }
+  }
+
+  numBer();
+</script>
+</body>
+</html>

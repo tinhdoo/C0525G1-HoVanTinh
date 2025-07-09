@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let month = parseInt(prompt("Enter month"));
+  let year = parseInt(prompt("Enter year"));
+  function date(month, year){
+  if (!Number.isInteger(month) || !Number.isInteger(year)|| month < 1 || month > 12 || isNaN(month)) {
+    alert('Vui lòng nhập lại');
+    return;
+  }
+  {
+    switch (month) {
+      case 1:
+      case 5:
+      case 3:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        alert(`Tháng ${month}, năm ${year} có 31 ngày`)
+        break;
+      case 2:
+        if ((year%4===0 && year%100!==0)|| year%400===0) {
+          alert(`Tháng 2, năm ${year} có 29 ngày`)
+        }else{
+          alert(`Tháng 2, năm ${year} có 28 ngày`)
+        }
+        break;
+      case 4:
+        alert(`Tháng 4, năm ${year} có 30 ngày`);
+        break;
+      case 6:
+        alert(`Tháng 6, năm ${year} có 30 ngày`);
+        break;
+      case 9:
+        alert(`Tháng 9, năm ${year} có 30 ngày`);
+        break;
+      case 11:
+        alert(`Tháng 11, năm ${year} có 30 ngày`);
+        break;
+      default:
+    }
+  }
+  }
+  date(month, year);
+</script>
+</body>
+</html>

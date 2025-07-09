@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let input = prompt('nhập 1 chuỗi số cách nhau bằng dấu "," ');
+  let arr = input.split(',');
+  let n = arr.length;
+
+  for (let i = 0; i <= n; i++) {
+    if ( arr[i] % 3 && arr[i] <= 15) {
+      console.log(i);
+    }
+  }
+
+</script>
+</body>
+</html>

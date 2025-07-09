@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<style>
+  .card {
+    height: 100%;
+  }
+  .product-card {
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  div {
+    margin: 15px;
+  }
+
+  table {
+    margin: auto;
+  }
+
+  body {
+    background-color: darkorange;
+  }
+
+</style>
+<body>
+<table style="width:100%">
+  <td style="; font-size: xx-large; padding: 10px; background-color: white; width: 95px">  </td>
+  <th style="margin: auto; text-align: left; font-size: xx-large; padding: 12px; background-color: white"> SHOPPII</th>
+  <td style="; font-size: xx-large; padding: 10px; background-color: white; width: 800px">  </td>
+ <td style=" padding: 10px; background-color: white"><input type="text" style=" border-radius: 20px; padding: 5px; font-size: medium" placeholder="Search...">  </td>
+
+</table>
+<br>
+
+<table>
+  <tr>
+    <td>
+      <div class="card" style="width: 12rem;">
+        <img src="nuoc-ngot-coca-cola-zero-320ml_afe6eb3890524920a7acb025c4d95559_grande.webp" class="card-img-top"
+             alt="...">
+        <div class="card-body product-card">
+          <h5 class="card-title">Coca cola</h5>
+          <p class="card-info">250ml</p>
+          <p class="card-text" style="font-size: 14px">Hương vị cổ điển không đường, mát lạnh, phù hợp cho mọi bữa ăn.</p>
+          <p class="card-price" style="font: xx-large; text-decoration-line: inherit">25.000đ</p>
+          <a href="#" class="btn btn-primary" style="font-size: x-small"
+             onclick="add('Coca','25.000','250ml','Hương vị cổ điển không đường, mát lạnh, phù hợp cho mọi bữa ăn.','nuoc-ngot-coca-cola-zero-320ml_afe6eb3890524920a7acb025c4d95559_grande.webp')">Thêm
+            vào giỏ hàng</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="card" style="width: 12rem;">
+        <img src="lon_alkaline_e02fa9cead1342f8bcb51f2c471d48d2_master.webp" class="card-img-top"
+             alt="...">
+        <div class="card-body product-card">
+          <h5 class="card-title"> Alkaline </h5>
+          <p class="card-info">250ml</p>
+          <p class="card-describe" style="font-size: 14px">Nước khoáng thiên nhiên, giúp bổ sung khoáng chất và cân bằng độ pH cho cơ thể.</p>
+          <p class="card-price" style="font: xx-large; text-decoration-line: inherit">23.000đ</p>
+          <a href="#" class="btn btn-primary" style="font-size: x-small"
+             onclick="add('Alkaline','23.000','250ml','Nước khoáng thiên nhiên, giúp bổ sung khoáng chất và cân bằng độ pH cho cơ thể.','lon_alkaline_e02fa9cead1342f8bcb51f2c471d48d2_master.webp')">Thêm
+            vào giỏ hàng</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="card" style="width: 12rem;">
+        <img src="8934588192227.webp" class="card-img-top"
+             alt="...">
+        <div class="card-body product-card">
+          <h5 class="card-title">Twister </h5>
+          <p class="card-info">250ml</p>
+          <p class="card-describe" style="font-size: 14px">Nước cam ép nguyên chất, giàu vitamin C, giải khát tức thì, tăng cường sức đề kháng.</p>
+          <p class="card-price" style="font: xx-large; text-decoration-line: inherit">25.000đ</p>
+          <a href="#" class="btn btn-primary" style="font-size: x-small" onclick="add('Twister','25.000','250ml','Nước cam ép nguyên chất, giàu vitamin C, giải khát tức thì, tăng cường sức đề kháng.','8934588192227.webp')">Thêm vào giỏ hàng</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="card" style="width: 12rem;">
+        <img src="55516-8934588012112.webp" class="card-img-top"
+             alt="...">
+        <div class="card-body product-card">
+          <h5 class="card-title">Pepsi </h5>
+          <p class="card-info">250ml</p>
+          <p class="card-describe" style="font-size: 14px">Đậm đà hương vị cola truyền thống, giúp bạn sảng khoái suốt cả ngày.</p>
+          <p class="card-price" style="font: xx-large; text-decoration-line: inherit">25.000đ</p>
+          <a href="#" class="btn btn-primary" style="font-size: x-small" onclick="add('Pepsi','25.000','250ml','Đậm đà hương vị cola truyền thống, giúp bạn sảng khoái suốt cả ngày.','55516-8934588012112.webp')">Thêm vào giỏ hàng</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="card" style="width: 12rem;">
+        <img src="NUOC%20NGOT%20CHANH%20TUOI%20ON%20LEMON%20LON%20330ML.jpg" class="card-img-top"
+             alt="...">
+        <div class="card-body product-card">
+          <h5 class="card-title">Oplus Lemon</h5>
+          <p class="card-info">250ml</p>
+          <p class="card-describe" style="font-size: 14px">Nước chanh bạc hà mát lạnh, sảng khoái tức thì, thích hợp khi chơi thể thao hay trời nóng.</p>
+          <p class="card-price" style="font: xx-large; text-decoration-line: inherit">23.000đ</p>
+          <a href="#" class="btn btn-primary" style="font-size: x-small" onclick="add('Oplus','23.000','250ml','Nước chanh bạc hà mát lạnh, sảng khoái tức thì, thích hợp khi chơi thể thao hay trời nóng.','NUOC%20NGOT%20CHANH%20TUOI%20ON%20LEMON%20LON%20330ML.jpg')">Thêm vào giỏ hàng</a>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="container bg-white p-3 mt-4 rounded">
+  <h4>🛒 Giỏ hàng:</h4>
+  <ul id="cartList" class="list-group"></ul>
+</div>
+
+</body>
+<script>
+  let cart = [];
+
+  class product {
+    constructor(maSS, ten, namXb, soLuong, image) {
+      this.name = name;
+      this.price = price;
+      this.info = info;
+      this.describe = describe;
+      this.image = image;
+      this.quantity = 1;
+    }
+  }
+
+  function add(maSS, ten, namXb, soLuong, image) {
+
+    let existing = cart.find(p => p.maSS === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      let newProduct = new product(name, price, info, describe, image);
+      cart.push(newProduct);
+    }
+    showCart();
+  }
+
+  function viewProduct(maSS, ten, namXb, soLuong, image) {
+    for (let i = 0; i < cart.length; i++) {
+      html += ` <td>
+      <div class="card" style="width: 12rem;">
+        <img src="${cart[i].image}" class="card-img-top"
+             alt="...">
+        <div class="card-body product-card">
+          <h5 class="card-title"></h5>
+          <p class="card-namXb"></p>
+          <p class="card-soLuong" style="font-size: 14px"></p>
+          <p class="card-ten" style="font: xx-large; text-decoration-line: inherit"></p>
+          <a href="#" class="btn btn-primary" style="font-size: x-small" onclick="add()"></a>
+        </div>
+      </div>
+    </td>`
+
+    }
+    }
+
+    function showCart() {
+      let html = '';
+      for (let i = 0; i < cart.length; i++) {
+        html += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <img src="${cart[i].image}" width="50" height="50" class="me-2">
+                  <strong>${cart[i].maSS}</strong> - ${cart[i].ten}đ - ${cart[i].namXb} -
+                  SL: ${cart[i].quantity}<br>
+                  <small>${cart[i].soLuong}</small>
+                </div>
+                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${i})">Xoá</button>
+              </li>`;
+      }
+
+      document.getElementById("cartList").innerHTML = html;
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      showCart();
+      viewProduct();
+    }
+
+</script>
+
+</html>

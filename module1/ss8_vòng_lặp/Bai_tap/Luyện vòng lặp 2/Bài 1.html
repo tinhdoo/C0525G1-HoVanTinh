@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let i = 0;
+  let a = 0;
+  let b = 1;
+  let c = 0;
+  while ( i < 10000 ){
+    c = a + b;
+    a = b;
+    b = c;
+    document.writeln(c);
+    i++
+  }
+
+
+</script>
+</body>
+</html>

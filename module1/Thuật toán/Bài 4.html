@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //Tính tổng và tích các chữ số của một số nguyên dương m cho trước
+ // (Ví dụ : m=234=> S=2+3+4=9, P=2*3*4=24)
+
+let sum = 0;
+let m = 334;
+let tich = 1;
+while (m>0){
+  sum += m%10
+  tich *= m%10;
+  m = Math.floor(m/10);  //chia lấy nguyên
+}
+console.log(sum);
+
+console.log(tich);
+
+
+</script>
+</body>
+</html>

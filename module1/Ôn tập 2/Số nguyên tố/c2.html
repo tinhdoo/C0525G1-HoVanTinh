@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = [1, 2, 4, 65, 6, 5, 9];
+  console.log(arr);
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      console.log(arr[i]);
+      console.log("<br>" + i);
+    }
+    if (isPrime(arr[i])){
+      console.log("số nguyên tố:" + arr[i]);
+    }
+
+  }
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      count++;
+      sum += arr[i];
+    }
+    if (arr[i] % 3 === 0) {
+      console.log("Các phần tử ở vị trí chẵn và chia hết cho 3:" + i)
+    }
+    if (isPerfectSquare(arr[i])) {
+      console.log(arr[i]);
+    }
+  }
+  let average = 0;
+  if (count > 0) {
+    average = sum / count;
+  }
+
+  console.log("Số phần tử chẵn là:" + count);
+  console.log(average);
+
+  function isPerfectSquare(n) {
+    let sqrt = Math.sqrt(n);
+    return sqrt === Math.floor(sqrt);
+  }
+
+  function isPrime(n) {
+    if (n < 2)
+      return false;
+
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0)
+        return false;
+    }
+    return true;
+  }
+
+</script>
+</body>
+</html>

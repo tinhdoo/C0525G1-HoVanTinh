@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let input = prompt("Nhập 1 chuỗi");
+  let word = prompt("Nhập 1 từ");
+  let string = input.split("");
+  let n = 0;
+  for (let i = 0; i < string.length; i++) {
+    if ( string[i] === word ) {
+      n++;
+    }
+  }
+  console.log(n);
+
+  function chanLe(n){
+    if (n % 2 === 0 && n > 0) {
+      return 1;
+    } else if (n % 2 !== 0) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+  console.log(chanLe(n));
+</script>
+</body>
+</html>

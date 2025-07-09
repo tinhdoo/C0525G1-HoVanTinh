@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let input = prompt('Nhập 1 ký tự');
+  let arr = ['e', 'd', 'c', 'a', 'a'];
+
+
+  function kiemTra(arr, ch) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (ch === arr[i]) {
+        count++;
+      }
+    }
+    if (count > 0) {
+      return count;
+
+    } else {
+      return -1;
+    }
+  }
+
+  let result = kiemTra(arr, input);
+  document.write(result);
+</script>
+</body>
+</html>

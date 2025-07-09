@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập số lượng phần tử n:");
+  let arr = [];
+
+  for (let i = 0; i < n; i++) {
+    let x = +prompt(`Nhập phần tử thứ ${i + 1}:`);
+    arr.push(x);
+  }
+  let countChan = 0;
+  let countLe = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0){
+      countChan++;
+  }else {
+      countLe++;
+    }
+  }
+  if (countChan === countLe){
+    console.log("True")
+  }else {
+    console.log("False")
+  }
+</script>
+</body>
+</html>

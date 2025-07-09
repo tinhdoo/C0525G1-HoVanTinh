@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class Rectangle {
+    width;
+    height;
+    color;
+
+    constructor(width, height, color) {
+      this.width = width;
+      this.height = height;
+      this.color = color;
+    }
+
+    acreage() {
+      return this.width * this.height;
+    }
+
+    perimeter() {
+      return (this.width + this.height) * 2;
+    }
+
+  }
+
+  let retangle = new Rectangle(12, 5, 'black');
+  console.log(retangle.perimeter());
+  console.log(retangle.acreage());
+  console.log(retangle)
+</script>
+</body>
+</html>

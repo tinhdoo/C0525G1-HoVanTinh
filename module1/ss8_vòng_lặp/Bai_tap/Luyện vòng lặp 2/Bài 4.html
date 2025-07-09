@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+<pre id="output"></pre>
+
+<script>
+  let i;
+  let j;
+  let output = ""
+
+  for (i = 1; i <= 10; i++) {
+    for (j = 1; j <= 20; j++) {
+      if (i === 1 || i === 10) {
+        document.write("*");
+      } else {
+        document.write("<br>");
+        document.write("*");
+        for (j = 2; j < 20; j++) {
+          document.write("&nbsp","&nbsp");
+        }
+        document.write("*");
+        document.write("<br>");
+
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

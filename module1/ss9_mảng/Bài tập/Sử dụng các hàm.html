@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  // Bài 1
+  /*  let mycolor = ["red", "green", "blue", "black"];
+    let result = mycolor.join(",");
+    alert(result);*/
+
+
+
+
+  // Bài 2
+/*  let input = prompt('Nhập chuỗi số bầt kỳ');
+  let arr = input.split("").map(Number);
+  let result = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    result += arr[i];
+
+    if (arr[i] % 2 === 0 && arr[i + 1] % 2 === 0) {
+      result += "-";
+    }
+  }
+  document.write(result);*/
+
+
+   //Bài 3
+
+  let indut = prompt('Nhập chuỗi từ');
+  let arr = indut.split("")
+  let result = "";
+
+  for (let i = 0; i < arr.length; i ++) {
+   if(arr[i] >='a' && arr[i]<="z") {
+     result+=arr[i].toUpperCase();
+   } else if (arr[i] >='A' && arr[i]<='Z') {
+       result+=arr[i].toLowerCase();
+     } else {
+     result+=arr[i];
+   }
+    }
+    document.write(result);
+  </script>
+
+
+</body>
+</html>

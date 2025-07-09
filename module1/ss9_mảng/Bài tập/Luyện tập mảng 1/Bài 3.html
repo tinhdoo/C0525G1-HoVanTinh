@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = [5, 3, 10, 3, 11, 2, 75, 23, 1, 53]
+  let max = arr[0];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+
+    }
+    sum = sum + arr[i] ;
+  }
+  let medi = sum / arr.length;
+  document.write(max + " " + medi);
+</script>
+</body>
+</html>

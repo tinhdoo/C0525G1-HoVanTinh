@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // kiểm tra chuỗi chữ in hay thường
+  function checkString(str) {
+    if (parseInt(str)){
+      return str;
+    }
+    for (let i = 0; i < str.length; i++) {
+      let c = str[i];
+      if (c < 'A' && c <= 'Z') {
+        return false;
+      }
+    }
+    return true;
+  }
+  let s = prompt("Nhập chuỗi:")
+  if (checkString(s)) {
+    console.log("Chuỗi chỉ có chữ thường");
+  }else {
+    console.log("Chuỗi có chữ in hoa");
+  }
+
+
+</script>
+</body>
+</html>

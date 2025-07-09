@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  class danhBa {
+    constructor(number, maSS, local) {
+      this.number = number;
+      this.name = name;
+      this.local = local;
+    }
+
+    hienThi() {
+      console.log(`SĐT: ${this.number},Tên: ${this.name}, Địa chỉ: ${this.local}`);
+    }
+
+    delete() {
+      this.number = null;
+      this.name = null;
+      this.local = null;
+    }
+  }
+  let tinh = new danhBa('0905574378','Tinh','Quang Nam');
+  tinh.hienThi();
+
+  tinh.delete();
+  console.log(tinh);
+</script>
+</body>
+</html>

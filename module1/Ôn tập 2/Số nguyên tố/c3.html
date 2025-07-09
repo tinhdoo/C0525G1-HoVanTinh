@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập mảng</title>
+</head>
+<body>
+
+<script>
+  // 1. Nhập mảng từ bàn phím
+  let n = +prompt("Nhập số lượng phần tử n:");
+  let arr = [];
+
+  for (let i = 0; i < n; i++) {
+    let x = +prompt(`Nhập phần tử thứ ${i + 1}:`);
+    arr.push(x);
+  }
+
+  // 2. Thêm mới các phần tử
+  let soThem = +prompt("Bạn muốn thêm mấy phần tử?");
+  for (let i = 0; i < soThem; i++) {
+    let x = +prompt(`Nhập phần tử mới thứ ${i + 1}:`);
+    arr.push(x);
+  }
+
+  // Hiển thị mảng sau khi thêm
+  console.log("Mảng sau khi thêm:", arr);
+
+  // 3. Tính tổng các số chẵn, không tính số có hàng đơn vị là 0
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0 && arr[i] % 10 !== 0) {
+      sum += arr[i];
+    }
+  }
+
+  console.log("Tổng các số chẵn (không tính số có hàng đơn vị là 0): " + sum);
+
+</script>
+
+</body>
+</html>

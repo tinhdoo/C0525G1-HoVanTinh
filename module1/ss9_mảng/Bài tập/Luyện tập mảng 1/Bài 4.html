@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let input = prompt("Nhập chuỗi số bất kỳ, cách nhau bằng dấu ' , '")
+  let arr = input.split(",");
+  let numbers = [];
+  for (let i = 0; i < arr.length; i++) {
+    numbers.push(parseInt(arr[i]));
+  }
+  document.write(numbers.join("," + "<br>"));
+
+  numbers.reverse();
+
+  document.write(numbers.join("<br>" + "," + "<br>"));
+</script>
+</body>
+</html>

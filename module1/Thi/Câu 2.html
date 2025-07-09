@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function capSoThanThiet(a, b) {
+    let tongUocA = 0;
+    let tongUocB = 0;
+    for (let i = 0; i <= a / 2; i++) {
+      if (a % i === 0) {
+        tongUocA += i;
+      }
+    }
+    for (let j = 0; j <= b / 2; j++) {
+      if (b % j === 0) {
+        tongUocB += j;
+      }
+    }
+    if (tongUocA === b && tongUocB === a) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  console.log(capSoThanThiet(220, 284));
+  console.log(capSoThanThiet(123, 456));
+</script>
+</body>
+</html>

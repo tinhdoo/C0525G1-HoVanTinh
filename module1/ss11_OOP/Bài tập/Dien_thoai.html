@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Mobile Messaging</title>
+</head>
+<body>
+<script>
+
+  class Mobile {
+    constructor(pin) {
+      this.pin = pin;
+      this.inbox = [];
+      this.sent = [];
+      this.isOn = true;
+    }
+
+    turnOff() {
+      this.isOn = false;
+    }
+
+    turnOn() {
+      this.isOn = true;
+    }
+
+    usePin() {
+      if (this.pin > 0) this.pin--;
+      else {
+        console.log("Hết pin, điện thoại tắt");
+        this.turnOff();
+      }
+    }
+
+    getStatus() {
+      return this.isOn ? "Bật" : "Tắt";
+    }
+
+    receiveMessage(msg) {
+      if (!this.isOn) return console.log("Máy tắt, không nhận được tin");
+      this.inbox.push(msg);
+      this.usePin();
+    }
+  }
+  class GuiTinNhan {
+    constructor(phone) {
+      this.phone = phone;
+    }
+
+    dangSoan(text) {
+      this.text = text;
+
+    }
+
+    send(toPhone) {
+      if (!this.phone.isOn) return console.log("Máy gửi tắt");
+      toPhone.receiveMessage(this.text);
+      this.phone.sent.push(this.text);
+      this.phone.usePin();
+    }
+
+    getPin() {
+      return this.phone.pin;
+    }
+  }
+
+  class SwitchButton {
+    constructor(phone) {
+      this.phone = phone;
+    }
+
+    switchOff() {
+      this.phone.turnOff();
+    }
+
+    switchOn() {
+      this.phone.turnOn();
+    }
+  }
+
+  let nokia = new Mobile(55);
+  let iphone = new Mobile(40)
+  let messenger = new GuiTinNhan(nokia);
+  let sw = new SwitchButton(nokia);
+
+  console.log("Nokia:", nokia.getStatus(), "Pin:", nokia.pin);
+  console.log("Iphone:", iphone.getStatus(), "Pin:", iphone.pin);
+
+
+  messenger.dangSoan("Hello từ Nokia 🌟");
+  messenger.send(iphone);
+  console.log("Hộp thư đến:", iphone.inbox);
+  console.log("Đã gửi:", nokia.sent);
+  console.log("Pin còn:", messenger.getPin());
+
+
+
+  sw.switchOff();
+  console.log(nokia.getStatus());
+  sw.switchOn();
+  console.log(nokia.getStatus());
+</script>
+</body>
+</html>

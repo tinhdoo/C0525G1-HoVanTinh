@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function check() {
+    let n = parseInt(prompt("Nhập số lượng phần tử của mảng: "));
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+      let x = parseInt(prompt(`Nhập phần tử ${i + 1}:`));
+      arr.push(x);
+    }
+    console.log(arr);
+
+    let up = true;
+    let down = true;
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        up = false;
+      }
+      if (arr[i] < arr[i + 1]) {
+        down = false;
+      }
+      if (up || down) {
+        console.log("OK")
+      } else {
+        console.log("NO")
+      }
+    }
+  }
+  check();
+</script>
+</body>
+</html>

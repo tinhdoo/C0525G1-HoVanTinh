@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class Remote {
+    constructor(tivi) {
+      this.tivi = tivi;
+    }
+
+    control(channel) {
+      this.tivi.changeChannel(channel);
+    }
+
+    switchOn() {
+      this.tivi.status = true;
+    }
+
+    switchOff() {
+      this.tivi.status = false;
+    }
+  }
+
+  class Tivi {
+    constructor(channel,volume,status) {
+      this.channel = channel;
+      this.volume = volume;
+      this.status = status;
+    }
+    getStatus() {
+      return this.status;
+    }
+    getChannel() {
+      return this.channel;
+    }
+    getVolume() {
+      return this.volume;
+    }
+
+    turnOff() {
+      this.status = false;
+    }
+
+    turnOn() {
+      this.status = true;
+    }
+
+    volumeUp() {
+      this.volume++;
+    }
+
+    volumeDown() {
+      this.volume--;
+    }
+
+    changeChannel(channel) {
+      this.channel = channel;
+    }
+  }
+
+  let tivi = new Tivi(12,50,false);
+  let remote = new Remote(tivi);
+  console.log(tivi.getStatus());
+  console.log(tivi.getChannel());
+  console.log(tivi.getVolume());
+  tivi.turnOn();
+  tivi.volumeUp();
+  tivi.volumeUp()
+  console.log(tivi.getStatus());
+  console.log(tivi.getVolume());
+  tivi.changeChannel(7);
+  console.log(tivi.getChannel());
+  remote.control(15);
+  console.log(tivi.getChannel());
+  tivi.volumeDown()
+  console.log(tivi.getVolume());
+  remote.switchOff()
+  console.log(tivi.getStatus());
+
+
+</script>
+
+</body>
+</html>

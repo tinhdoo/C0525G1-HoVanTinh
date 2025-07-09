@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label> <input id="do-c" type="number"></label>
+<button id="result">Enter</button>
+<script>
+  document.getElementById("result").addEventListener("click", function () {
+   let doC = document.getElementById("do-c").value;
+   let result = doC * 9/5 +32;
+   if (isNaN(doC)) {
+     alert('Vui lòng nhập lại!')
+   }
+   else {
+     document.write(result);
+   }
+  }
+  )
+</script>
+</body>
+</html>

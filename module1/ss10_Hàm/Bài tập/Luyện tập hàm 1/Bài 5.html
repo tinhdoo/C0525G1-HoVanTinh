@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let input = prompt('Nhập tên ngôi sao:')
+  let chomA = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+  let chomB = ['Ursa Minor', 'Taurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+
+  function star() {
+    let isFind =false;
+    for (let i = 0; i < chomA.length; i++) {
+      if (chomA[i] === input) {
+        document.write(chomB[i]);
+        isFind = true;
+        break;
+      }
+    }
+      if (!isFind) {
+        document.write("Tên sao bạn vừa nhập không có trên hệ thống");
+      }
+  }
+  star();
+</script>
+</body>
+</html>

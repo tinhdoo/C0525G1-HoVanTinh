@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background-color: #fff3c2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 1100px;
+    padding: 40px;
+    margin: auto;
+  }
+
+  td, th {
+    border: 1px solid black;
+  }
+</style>
+<body>
+<table>
+  <h3 style="text-align: center"> Quản lý sách</h3>
+
+  <tr>
+    <td>
+      <p> Mã số sách</p>
+    </td>
+    <td>
+      <p> Tên sách</p>
+    </td>
+    <td>
+      <p> Năm xuất bản</p>
+    </td>
+    <td>
+      <p> Số quyển</p>
+    </td>
+    <td>
+      <p> Tình trạng</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p class="ma-so"></p>
+    </td>
+    <td>
+      <p class="ten"></p>
+    </td>
+    <td>
+      <p class="nam-xb"></p>
+    </td>
+    <td>
+      <p class="so-luong"></p>
+    </td>
+    <td>
+      <p class="tinh-trang"></p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p class="ma-so1"></p>
+    </td>
+    <td>
+      <p class="ten1"></p>
+    </td>
+    <td>
+      <p class="nam-xb1"></p>
+    </td>
+    <td>
+      <p class="so-luong1"></p>
+    </td>
+    <td>
+      <p class="tinh-trang1"></p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p class="ma-so2"></p>
+    </td>
+    <td>
+      <p class="ten2"></p>
+    </td>
+    <td>
+      <p class="nam-xb2"></p>
+    </td>
+    <td>
+      <p class="so-luong2"></p>
+    </td>
+    <td>
+      <p class="tinh-trang2"></p>
+    </td>
+  </tr>
+</table>
+<br>
+<br>
+<table style="width: 500px; margin: auto; padding: 40px">
+  <tr>
+    <td>
+      Nhập mã số <input type="number">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Nhập tên sách <input type="text">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Nhập năm xuất bản <input type="number">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Nhập số lượng <input type="number">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Nhập tình trạng <input type="text">
+    </td>
+  </tr>
+
+</table>
+<button style="text-align: center"> Thêm sách </button>
+
+
+<script>
+  class sach {
+    constructor(maSo, ten, namXuatBan, soLuong, tinhTrang) {
+      this.maSo = maSo;
+      this.ten = ten;
+      this.namXuatBan = namXuatBan;
+      this.soLuong = soLuong;
+      this.tinhTrang = tinhTrang;
+    }
+
+    getMaSo() {
+      return this.maSo;
+    }
+
+    getTen() {
+      return this.ten;
+    }
+
+    getNamXuatBan() {
+      return this.namXuatBan;
+    }
+
+    getSoLuong() {
+      return this.soLuong;
+    }
+
+    getTinhTrang() {
+      return this.tinhTrang;
+    }
+  }
+
+  let toan = new sach(12345, 'Toán', 2000, 3, true);
+  let van = new sach(23245, 'Văn', 1998, 2, true);
+  let anh = new sach(52222, 'Tiếng Anh', 1999, 5, false);
+
+  document.querySelector('.ma-so').innerHTML = toan.getMaSo();
+  document.querySelector('.ten').innerHTML = toan.getTen();
+  document.querySelector('.nam-xb').innerHTML = toan.getNamXuatBan();
+  document.querySelector('.so-luong').innerHTML = toan.getSoLuong();
+  document.querySelector('.tinh-trang').innerHTML = toan.getTinhTrang();
+
+  document.querySelector('.ma-so1').innerHTML = van.getMaSo();
+  document.querySelector('.ten1').innerHTML = van.getTen();
+  document.querySelector('.nam-xb1').innerHTML = van.getNamXuatBan();
+  document.querySelector('.so-luong1').innerHTML = van.getSoLuong();
+  document.querySelector('.tinh-trang1').innerHTML = van.getTinhTrang();
+
+  document.querySelector('.ma-so2').innerHTML = anh.getMaSo();
+  document.querySelector('.ten2').innerHTML = anh.getTen();
+  document.querySelector('.nam-xb2').innerHTML = anh.getNamXuatBan();
+  document.querySelector('.so-luong2').innerHTML = anh.getSoLuong();
+  document.querySelector('.tinh-trang2').innerHTML = anh.getTinhTrang();
+
+  function them() {
+    let maSo = prompt()
+    let ten = prompt()
+    let namXuatBan = prompt()
+    let soLuong = prompt()
+    let tinhTrang = prompt()
+    let sach = new sach(`${this.maSo}, ${this.ten}, ${this.namXuatBan}, ${this.soLuong}, ${this.tinhTrang}`)
+
+  }
+</script>
+</body>
+</html>

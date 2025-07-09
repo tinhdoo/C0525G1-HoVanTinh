@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class Rat {
+    maSS;
+    weight;
+    speed;
+    status;
+
+    constructor(maSS, weight, speed, status) {
+      this.name = name;
+      this.weight = weight;
+      this.speed = speed;
+      this.status = status;
+    }
+
+    getWeight() {
+      return this.weight;
+    }
+
+    getStatus() {
+      return this.status;
+    }
+
+    eated() {
+      this.weight = 0;
+    }
+
+    talk() {
+
+    }
+
+    isDead() {
+      return !this.status;
+    }
+  }
+
+  class Cat {
+    maSS;
+    weight;
+    maxSpeed;
+
+    constructor(maSS, weight, maxSpeed) {
+      this.name = name;
+      this.weight = weight;
+      this.maxSpeed = maxSpeed;
+    }
+
+    talk() {
+
+    }
+
+    catch(rat) {
+      if (rat.speed < this.maxSpeed && rat === 1) {
+        cat.eat(rat)
+      }
+    }
+    eat(rat) {
+      if (!rat.isDead() ) {
+        rat.eated()
+        this.weight++;
+      }
+    }
+
+    getWeight() {
+      return this.weight;
+    }
+  }
+
+  let rat = new Rat('jerry', 1, 2, true);
+  let rat2 = new Rat('ucw', 2, 3, true);
+  let cat = new Cat('tom', 10, 6);
+  cat.catch(rat)
+  cat.catch(rat2)
+  console.log(cat.getWeight())
+  console.log(rat.getStatus())
+  console.log(rat.getWeight())
+
+</script>
+</body>
+</html>

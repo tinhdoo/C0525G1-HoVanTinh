@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // Hàm tính tổng các ước của một số
+  function tongUoc(n) {
+    let tong = 0;
+    for (let i = 1; i <= n; i++) {
+      if (n % i === 0) {
+        tong += i;
+      }
+    }
+    return tong;
+  }
+
+  // Nhập mảng từ bàn phím
+  let n = parseInt(prompt("Nhập độ dài mảng:"));
+  let arr = [];
+
+  for (let i = 0; i < n; i++) {
+    let num = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+    arr.push(num);
+  }
+
+  console.log("Mảng sau khi thêm:", arr);
+
+  // Tạo mảng mới: mỗi phần tử là tổng các ước
+  let newArr = arr.map(tongUoc);
+
+  console.log("Mảng mới (tổng các ước):", newArr);
+
+
+</script>
+</body>
+</html>
