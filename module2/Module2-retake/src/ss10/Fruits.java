@@ -1,6 +1,8 @@
 package ss10;
 
 import java.time.LocalDate;
+import java.util.Scanner;
+import static ss10.Main.fruits;
 
 public class Fruits {
     protected String name;
@@ -17,9 +19,6 @@ public class Fruits {
         this.expiry = expiry;
         this.country = country;
         this.price = price;
-    }
-
-    public Fruits() {
     }
 
     public String getName() {
@@ -82,7 +81,37 @@ public class Fruits {
                 ", price=" + price +
                 '}';
     }
-    public String addFruit(){
-            return addFruit();
+    public static void add(Fruits fruit){
+        fruits.add(fruit);
+
+    }
+    public static void add(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập tên trái cây: ");
+        String name = scanner.nextLine().trim();
+        System.out.println("Nhập loại: ");
+        String  type = scanner.nextLine();
+
+        System.out.println("Nhập ngày sản xuất (yyyy mm dd): ");
+        int year = scanner.nextInt();
+        int month = scanner.nextInt();
+        int day = scanner.nextInt();
+        LocalDate productionDate = LocalDate.of(year, month, day);
+
+        System.out.println("Nhập hạn sử dụng (yyyy mm dd): ");
+        year = scanner.nextInt();
+        month = scanner.nextInt();
+        day = scanner.nextInt();
+        LocalDate expiry = LocalDate.of(year, month, day);
+
+
+        System.out.println("Nhập xuất sứ: ");
+        scanner.nextLine();
+        String country = scanner.nextLine();
+        System.out.println("Nhập giá: ");
+        int price = scanner.nextInt();
+
+        Fruits fruits = new Fruits(name,type,productionDate,expiry,country,price);
+        add(fruits);
     }
 }
