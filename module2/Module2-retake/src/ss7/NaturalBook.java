@@ -7,8 +7,11 @@ public class NaturalBook extends Book{
         this.quantity = quantity;
     }
 
-    public NaturalBook(String name, String publisher, int yearOfPublic, int quantity) {
-        super(name, publisher, yearOfPublic);
+    public NaturalBook(String name, String publisher, int yearOfPublish, int quantity) {
+        super(name, publisher, yearOfPublish);
         this.quantity = quantity;
+    }
+    public void display() {
+        System.out.println("Natural Book: " + name + ", " + publisher + ", " + yearOfPublish + ", Quantity: " + quantity);
     }
 }

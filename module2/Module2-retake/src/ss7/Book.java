@@ -1,48 +1,31 @@
 package ss7;
 
 public class Book implements IBook{
-    private String name;
-    private String publisher;
-    private int yearOfPublic;
+    protected String name;
+    protected String publisher;
+    protected int yearOfPublish;
 
     public Book(){}
 
-    public Book(String name, String publisher, int yearOfPublic) {
+    public Book(String name, String publisher, int yearOfPublish) {
         this.name = name;
         this.publisher = publisher;
-        this.yearOfPublic = yearOfPublic;
+        this.yearOfPublish = yearOfPublish;
     }
 
-    public String getName() {
-        return name;
+    public Book(String name, String publisher) {
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public int getYearOfPublic() {
-        return yearOfPublic;
-    }
-
-    public void setYearOfPublic(int yearOfPublic) {
-        this.yearOfPublic = yearOfPublic;
-    }
-
     @Override
     public String toString() {
         return "Book{" +
                 "name='" + name + '\'' +
                 ", publisher='" + publisher + '\'' +
-                ", yearOfPublic=" + yearOfPublic +
+                ", yearOfPublic=" + yearOfPublish +
                 '}';
+    }
+
+    @Override
+    public void display() {
+
     }
 }

@@ -131,7 +131,11 @@
   let cart = [];
 
   class product {
+<<<<<<< HEAD
+    constructor(name, price, info, describe, image) {
+=======
     constructor(maSS, ten, namXb, soLuong, image) {
+>>>>>>> a215c5e (up)
       this.name = name;
       this.price = price;
       this.info = info;
@@ -141,9 +145,15 @@
     }
   }
 
+<<<<<<< HEAD
+  function add(name, price, info, describe, image) {
+
+    let existing = cart.find(p => p.name === name);
+=======
   function add(maSS, ten, namXb, soLuong, image) {
 
     let existing = cart.find(p => p.maSS === name);
+>>>>>>> a215c5e (up)
     if (existing) {
       existing.quantity += 1;
     } else {
@@ -153,7 +163,11 @@
     showCart();
   }
 
+<<<<<<< HEAD
+  function viewProduct(name, price, info, describe, image) {
+=======
   function viewProduct(maSS, ten, namXb, soLuong, image) {
+>>>>>>> a215c5e (up)
     for (let i = 0; i < cart.length; i++) {
       html += ` <td>
       <div class="card" style="width: 12rem;">
@@ -161,9 +175,15 @@
              alt="...">
         <div class="card-body product-card">
           <h5 class="card-title"></h5>
+<<<<<<< HEAD
+          <p class="card-info"></p>
+          <p class="card-describe" style="font-size: 14px"></p>
+          <p class="card-price" style="font: xx-large; text-decoration-line: inherit"></p>
+=======
           <p class="card-namXb"></p>
           <p class="card-soLuong" style="font-size: 14px"></p>
           <p class="card-ten" style="font: xx-large; text-decoration-line: inherit"></p>
+>>>>>>> a215c5e (up)
           <a href="#" class="btn btn-primary" style="font-size: x-small" onclick="add()"></a>
         </div>
       </div>
@@ -178,9 +198,15 @@
         html += `<li class="list-group-item d-flex justify-content-between align-items-center">
                 <div>
                   <img src="${cart[i].image}" width="50" height="50" class="me-2">
+<<<<<<< HEAD
+                  <strong>${cart[i].name}</strong> - ${cart[i].price}đ - ${cart[i].info} -
+                  SL: ${cart[i].quantity}<br>
+                  <small>${cart[i].describe}</small>
+=======
                   <strong>${cart[i].maSS}</strong> - ${cart[i].ten}đ - ${cart[i].namXb} -
                   SL: ${cart[i].quantity}<br>
                   <small>${cart[i].soLuong}</small>
+>>>>>>> a215c5e (up)
                 </div>
                 <button class="btn btn-sm btn-danger" onclick="removeFromCart(${i})">Xoá</button>
               </li>`;

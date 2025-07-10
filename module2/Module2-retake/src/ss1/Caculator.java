@@ -15,11 +15,11 @@ public class Caculator {
             numA = scanner.nextInt();
             System.out.print("Nhập số b: ");
             numB = scanner.nextInt();
-            System.out.print("Chọn phép tính: ");
             System.out.println("1. Cộng ");
             System.out.println("2. Trừ ");
             System.out.println("3. Nhân ");
             System.out.println("4. Chia ");
+            System.out.print("Chọn phép tính: ");
             operator = scanner.nextInt();
 
             switch (operator) {
@@ -33,14 +33,18 @@ public class Caculator {
                     answer = numA * numB;
                     break;
                 case 4:
-                    answer = numA / numB;
-                    break;
+                    if (numB != 0) {
+                        answer = numA / numB;
+                    } else {
+                        System.out.println("b phải lớn hơn 0");
+                        break;
+                    }
+                    System.out.println("--------------------------------------------------");
+                    System.out.println("Kết quả: " + answer);
+                    System.out.println("--------------------------------------------------");
             }
-            System.out.println("--------------------------------------------------");
-            System.out.println("Kết quả: "  +  answer);
-            System.out.println("--------------------------------------------------");
 
+            }
         }
     }
-}
 
