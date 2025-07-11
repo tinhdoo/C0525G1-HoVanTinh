@@ -3,16 +3,16 @@ package ss6;
 public class Cylinder extends Circle{
     private double height;
     public Cylinder(){
-    }
+    }           //overloading
     // thành phần không được kế thừa là constructor circle
     public Cylinder(double height) {     //overload
         this.height = height;
-    }
+    }          //overloading
 
-    public Cylinder(double radius, String color, double height) {     //overload
+    public Cylinder(double radius, String color, double height) {
         super(radius, color);   // radius và color không được kế thừa mà gọi constructor của lớp cha
         this.height = height;
-    }
+    }          //overloading
 
     public double getHeight() {
         return height;

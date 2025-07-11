@@ -3,9 +3,9 @@ package ss6;
 public class Circle {
     private double radius;
     private String color;
-    public Circle(){
+    public Circle(){            //overloading
     }
-    public Circle(double radius, String color){
+    public Circle(double radius, String color){         //overloading
         this.radius = radius;
         this.color = color;
     }
