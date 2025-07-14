@@ -92,17 +92,11 @@ public class Fruits {
         System.out.println("Nhập loại: ");
         String  type = scanner.nextLine();
 
-        System.out.println("Nhập ngày sản xuất (yyyy mm dd): ");
-        int year = scanner.nextInt();
-        int month = scanner.nextInt();
-        int day = scanner.nextInt();
-        LocalDate productionDate = LocalDate.of(year, month, day);
+        System.out.println("Ngày sản xuất: " + LocalDate.now());
+        LocalDate productionDate = LocalDate.now();
 
-        System.out.println("Nhập hạn sử dụng (yyyy mm dd): ");
-        year = scanner.nextInt();
-        month = scanner.nextInt();
-        day = scanner.nextInt();
-        LocalDate expiry = LocalDate.of(year, month, day);
+        System.out.println("Nhập hạn sử dụng (ngày): ");
+        LocalDate expiry = LocalDate.now().plusDays(scanner.nextLong());
 
 
         System.out.println("Nhập xuất sứ: ");
