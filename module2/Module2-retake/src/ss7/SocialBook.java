@@ -1,7 +1,7 @@
 package ss7;
 
 public class SocialBook extends Book {
-    public String author;
+    private String author;
 
     public SocialBook(String author) {
         this.author = author;
@@ -12,7 +12,7 @@ public class SocialBook extends Book {
         this.author = author;
     }
     public void display() {
-        System.out.println("Social Book: " + name + ", " + publisher + ", " + yearOfPublish + ", Author: " + author);
+        System.out.println("Social Book: " + getName() + ", " + getPublisher() + ", " + getYearOfPublish() + ", Author: " + author);
     }
 }
 

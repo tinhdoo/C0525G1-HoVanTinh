@@ -5,12 +5,12 @@ import java.util.Scanner;
 import static ss10.Main.fruits;
 
 public class Fruits {
-    protected String name;
-    protected String type;
-    protected LocalDate productionDate;   // ngày sản xuất
-    protected LocalDate expiry;   // hạn sử dụng
-    protected String country;
-    protected int price;
+    private String name;
+    private String type;
+    private LocalDate productionDate;   // ngày sản xuất
+    private LocalDate expiry;   // hạn sử dụng
+    private String country;
+    private int price;
 
     public Fruits(String name, String type, LocalDate productionDate, LocalDate expiry, String country, int price) {
         this.name = name;

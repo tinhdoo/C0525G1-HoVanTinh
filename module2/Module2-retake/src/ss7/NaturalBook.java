@@ -1,7 +1,7 @@
 package ss7;
 
 public class NaturalBook extends Book{
-    public int quantity;
+    private int quantity;
 
     public NaturalBook(int quantity) {
         this.quantity = quantity;
@@ -12,6 +12,6 @@ public class NaturalBook extends Book{
         this.quantity = quantity;
     }
     public void display() {
-        System.out.println("Natural Book: " + name + ", " + publisher + ", " + yearOfPublish + ", Quantity: " + quantity);
+        System.out.println("Natural Book: " + getName() + ", " + getPublisher() + ", " + getYearOfPublish() + ", Quantity: " + quantity);
     }
 }
