@@ -1,7 +1,4 @@
 package ss12.model;
-
-import ss12.service.IFruits;
-
 import java.time.LocalDate;
 
 public class Fruits {

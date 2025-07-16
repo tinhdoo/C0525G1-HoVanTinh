@@ -1,6 +1,6 @@
 package ss7;
 
-public class Book implements IBook{
+public class Book{
     private String name;
     private String publisher;
     private int yearOfPublish;
@@ -46,10 +46,5 @@ public class Book implements IBook{
                 ", publisher='" + publisher + '\'' +
                 ", yearOfPublic=" + yearOfPublish +
                 '}';
-    }
-
-    @Override
-    public void display() {
-
     }
 }
