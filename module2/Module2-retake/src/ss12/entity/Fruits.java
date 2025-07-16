@@ -1,4 +1,4 @@
-package ss12.model;
+package ss12.entity;
 import java.time.LocalDate;
 
 public class Fruits {
@@ -18,6 +18,10 @@ public class Fruits {
         this.expiry = expiry;
         this.country = country;
         this.price = price;
+    }
+
+    public Fruits() {
+
     }
 
     public int getId() {

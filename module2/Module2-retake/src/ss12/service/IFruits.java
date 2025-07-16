@@ -1,20 +1,10 @@
 package ss12.service;
-
-import ss12.model.Fruits;
-
+import ss12.entity.Fruits;
 import java.util.Map;
 
 public interface IFruits {
-
-    static void add() {
-
-    }
-
+    void add();
     void delete();
-
     void update();
-
-    static void displayFruit(Fruits fruit) {
-
-    }
+    void showAllFruits(Map<Integer, Fruits> fruits);
 }
