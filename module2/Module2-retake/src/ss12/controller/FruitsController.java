@@ -20,7 +20,7 @@ public class FruitsController{
             int s = scanner.nextInt();
             switch (s) {
                 case 1 -> {
-                    implFruits.showAllFruits(repo.getAll());
+                    implFruits.showAllFruits(repo.fruits);
                 }
                 case 2 -> implFruits.add();
                 case 3 -> implFruits.delete();
