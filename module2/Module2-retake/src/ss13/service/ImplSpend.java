@@ -2,7 +2,9 @@ package ss13.service;
 
 import ss13.entity.Spend;
 import ss13.repository.SpendRepo;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -12,64 +14,51 @@ public class ImplSpend implements ISpend {
 
     @Override
     public void add() {
-        System.out.println("====Thêm chi tiêu====");
-        System.out.println("Nhập mã chi tiêu: ");
+        System.out.println("====THÊM CHI TIÊU====");
+        System.out.print("Nhập mã chi tiêu: ");
         int code = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Nhập tên chi tiêu: ");
+        System.out.print("Nhập tên chi tiêu: ");
         String name = scanner.nextLine();
-        System.out.println("Nhập ngày chi tiêu");
-        LocalDate date = LocalDate.ofEpochDay(scanner.nextInt());
-        System.out.println("Nhập số tiền: ");
+        System.out.print("Nhập ngày chi tiêu (yyyy/mm/dd): ");
+        LocalDate date = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        System.out.print("Nhập số tiền: ");
         int amount = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Nhập mô tả: ");
+        System.out.print("Nhập mô tả: ");
         String describe = scanner.nextLine();
 
-        Spend newSpend = new Spend();
+        Spend newSpend = new Spend(code, name, date,amount,describe);
         repo.listSpend.put(code, newSpend);
         System.out.println("Thêm thành công");
-
-
     }
 
     @Override
     public void delete() {
 
+
     }
 
     @Override
     public void update() {
+        System.out.println("====SỬA CHI TIÊU====");
+        System.out.print("Nhập mã chi tiêu: ");
+        int code = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Nhập tên chi tiêu: ");
+        String name = scanner.nextLine();
+        System.out.print("Nhập ngày chi tiêu (yyyy/mm/dd): ");
+        LocalDate date = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        System.out.print("Nhập số tiền: ");
+        int amount = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Nhập mô tả: ");
+        String describe = scanner.nextLine();
 
-    }
+        Spend newSpend = new Spend(code, name, date,amount,describe);
+        repo.listSpend.put(code, newSpend);
+        System.out.println("Thêm thành công");
 
-    @Override
-    public void choose() {
-        int choose = scanner.nextInt();
-        while (true) {
-            switch (choose) {
-                case 1:
-                    getAll(Map.of());
-                    break;
-                case 2:
-                    add();
-                    break;
-                case 3:
-                    delete();
-                    break;
-                case 4:
-                    update();
-                    break;
-                case 5:
-                    searchById();
-                    break;
-                case 6:
-                    searchByname();
-                    break;
-                case 0:
-                    return;
-            }
-        }
     }
 
     @Override
@@ -83,17 +72,27 @@ public class ImplSpend implements ISpend {
     }
 
     @Override
-    public void getAll(Map<Integer, Spend> spend) {
-        for (Map.Entry<Integer, Spend> entry : spend.entrySet()) {
-            Spend spend1 = entry.getValue();
-            System.out.println("-------------------------------------");
-            System.out.println(spend1.getCode());
-            System.out.println(spend1.getName());
-            System.out.println(spend1.getDate());
-            System.out.println(spend1.getAmount());
-            System.out.println(spend1.getDescribe());
-            System.out.println("-------------------------------------");
-        }
+    public void getAll() {
+        if (repo.listSpend.isEmpty()) {
+            System.out.println("Danh sách rỗng!");
+            return;
+        } else {
+            System.out.printf("%-10s %-20s %-12s %-10s %-30s\n", "Mã", "Tên", "Ngày", "Số tiền", "Mô tả");
+            System.out.println("---------------------------------------------------------------------------------------");
 
+            for (Map.Entry<Integer, Spend> entry : repo.listSpend.entrySet()) {
+                Spend spend1 = entry.getValue();
+                System.out.printf(
+                        "%-10s %-20s %-12s %-10d %-30s\n",
+                        spend1.getCode(),
+                        spend1.getName(),
+                        spend1.getDate(),
+                        spend1.getAmount(),
+                        spend1.getDescribe()
+                );
+            }
+            System.out.println("---------------------------------------------------------------------------------------");
+
+        }
     }
 }

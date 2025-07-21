@@ -9,9 +9,8 @@ public interface ISpend {
     void delete();
     void update();
 
-    void getAll(Map<Integer, Spend> spend);
+    void getAll();
 
-    void choose();
     void searchById();
     void searchByname();
 }

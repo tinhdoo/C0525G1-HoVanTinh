@@ -5,7 +5,7 @@ import ss12.service.ImplFruits;
 import java.util.Scanner;
 
 public class FruitsController{
-    private static FruitsRepo repo = new FruitsRepo();
+    public static final FruitsRepo repo = new FruitsRepo();
     private static final Scanner scanner = new Scanner(System.in);
     ImplFruits implFruits = new ImplFruits();
 

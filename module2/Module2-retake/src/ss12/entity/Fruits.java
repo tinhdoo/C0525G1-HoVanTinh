@@ -5,8 +5,8 @@ public class Fruits {
     private int id;
     private String name;
     private String type;
-    private LocalDate productionDate;   // ngày sản xuất
-    private LocalDate expiry;   // hạn sử dụng
+    private LocalDate productionDate;
+    private LocalDate expiry;
     private String country;
     private int price;
 
@@ -19,10 +19,10 @@ public class Fruits {
         this.country = country;
         this.price = price;
     }
-
     public Fruits() {
-
     }
+
+
 
     public int getId() {
         return id;
