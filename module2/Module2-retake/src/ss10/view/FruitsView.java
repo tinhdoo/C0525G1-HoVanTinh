@@ -1,18 +1,13 @@
 package ss10.view;
 
-import ss10.controller.FruitsController;
 import ss10.model.Fruit;
-
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
-public class Display {
+public class FruitsView {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        FruitsController fruitsController = new FruitsController();
-        fruitsController.fruitsController();
-    }
     public static Fruit input(){
         System.out.println("Nhập tên trái cây: ");
         String name = scanner.nextLine().trim();
@@ -34,15 +29,15 @@ public class Display {
 
         return new Fruit(name, type, productionDate, expiry, country, price);
     }
-    public static Fruit displayFruits(Fruit fruit){
-        System.out.print(fruit.getName() + " - ");
-        System.out.print(fruit.getType() + " - ");
-        System.out.print("NSX: " + fruit.getProductionDate() + " - ");
-        System.out.print("HSD: " + fruit.getExpiry() + " - ");
-        System.out.print(fruit.getCountry() + " - ");
-        System.out.print(fruit.getPrice());
-        System.out.println();
-        return fruit;
+    public static void displayFruits(List<Fruit> fruits) {
+        for (Fruit fruit : fruits) {
+            System.out.print(fruit.getName() + " - ");
+            System.out.print(fruit.getType() + " - ");
+            System.out.print("NSX: " + fruit.getProductionDate() + " - ");
+            System.out.print("HSD: " + fruit.getExpiry() + " - ");
+            System.out.print(fruit.getCountry() + " - ");
+            System.out.print(fruit.getPrice());
+            System.out.println();
+        }
     }
-
 }
