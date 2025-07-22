@@ -1,10 +1,12 @@
 package ss13.controller;
 
-import ss13.service.ImplSpend;
+import ss13.repository.SpendRepo;
+import ss13.service.SpendService;
+
 import java.util.Scanner;
 
 public class SpendController {
-    ImplSpend implSpend = new ImplSpend();
+    SpendService service = new SpendService();
     Scanner scanner = new Scanner(System.in);
 
     public void menuSpend() {
@@ -20,12 +22,38 @@ public class SpendController {
             System.out.print("Chọn chức năng: ");
             int choose = scanner.nextInt();
             switch (choose) {
-                case 1 -> implSpend.getAll();
-                case 2 -> implSpend.add();
-                case 3 -> implSpend.delete();
-                case 4 -> implSpend.update();
-                case 5 -> implSpend.searchById();
-                case 6 -> implSpend.searchByname();
+                case 1 -> service.getAll();
+                case 2 -> {
+                    System.out.println("====THÊM CHI TIÊU====");
+                    System.out.println("Nhập mã chi tiêu: ");
+                    int code = scanner.nextInt();
+                    service.add(code);
+                }
+                case 3 -> {
+                    System.out.println("====XOÁ CHI TIÊU====");
+                    System.out.println("Nhập mã chi tiêu cần xoá: ");
+                    int code = scanner.nextInt();
+                    service.delete(code);
+                }
+                case 4 -> {
+                    System.out.println("====SỬA CHI TIÊU====");
+                    System.out.print("Nhập mã chi tiêu: ");
+                    int code = scanner.nextInt();
+                    service.update(code);
+                }
+                case 5 -> {
+                    System.out.println("====TÌM CHI TIÊU THEO MÃ====");
+                    System.out.println("Nhập mã cần tìm: ");
+                    int code = scanner.nextInt();
+                    service.searchById(code);
+                }
+                case 6 -> {
+                    System.out.println("====TÌM CHI TIÊU THEO TÊN====");
+                    System.out.println("Nhập tên cần tìm: ");
+                    scanner.nextLine();
+                    String name = scanner.nextLine();
+                    service.searchByname(name);
+                }
                 case 0 -> {
                     System.out.println("Tạm biệt!");
                     return;
