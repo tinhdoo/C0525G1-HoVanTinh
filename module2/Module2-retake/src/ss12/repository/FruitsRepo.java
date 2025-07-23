@@ -21,5 +21,9 @@ public class FruitsRepo {
         }
         return false;
     }
+    public Fruits add(){
+        fruits.put()
+    }
+
 }
 

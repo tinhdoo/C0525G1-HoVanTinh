@@ -1,24 +1,38 @@
 package ss13.controller;
 
+
 import ss13.entity.Spend;
 import ss13.service.SpendService;
-
 import java.util.Collection;
-import java.util.Scanner;
+import java.util.Map;
 
 public class SpendController {
     SpendService service = new SpendService();
 
-    public Collection<Spend> getAll() { return service.getAll(); }
+    public void delete(int code) {
+        service.delete(code);
+    }
+    public void update(int code, Spend spend) {
+        service.update(code, spend);
+    }
 
-    public boolean add(Spend spend) { return service.addSpend(spend); }
+    public Collection<Spend> getAll() {
+        return service.getAll();
+    }
 
-    public boolean delete(int code) { return service.delete(code); }
+    public Spend searchByCode(int code) {
+       return service.searchByCode(code);
+    }
 
-    public boolean update(Spend spend) { return service.update(spend); }
+    public Map<Integer, Spend> searchByName(String name) {
+       return service.searchByName(name);
+    }
 
-    public Spend searchByCode(int code) { return service.searchByCode(code); }
+    public Boolean isCodeExist(int code) {
+        return service.isCodeExist(code);
+    }
 
-    public Collection<Spend> searchByName(String name) { return service.searchByName(name); }
-
+    public Spend add(Spend spend) {
+       return service.addSpend(spend);
+    }
 }

@@ -2,10 +2,10 @@ package ss13.view;
 
 import ss13.controller.SpendController;
 import ss13.entity.Spend;
-import ss13.repository.SpendRepo;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SpendView {
@@ -26,21 +26,11 @@ public class SpendView {
             int choose = scanner.nextInt();
             switch (choose) {
                 case 1 -> getAll();
-                case 2 -> {
-                    add();
-                }
-                case 3 -> {
-                    delete();
-                }
-                case 4 -> {
-                    update();
-                }
-                case 5 -> {
-                    searchByCode();
-                }
-                case 6 -> {
-                    searchByname();
-                }
+                case 2 -> add();
+                case 3 -> delete();
+                case 4 -> update();
+                case 5 -> searchByCode();
+                case 6 -> searchByName();
                 case 0 -> {
                     System.out.println("Tạm biệt!");
                     return;
@@ -49,25 +39,33 @@ public class SpendView {
             }
         }
     }
-    private void searchByname() {
+
+    private void searchByName() {
         System.out.println("====TÌM CHI TIÊU THEO TÊN====");
-        scanner.nextLine(); // Đọc bỏ dòng thừa
         System.out.print("Nhập tên cần tìm: ");
+        scanner.nextLine();
         String name = scanner.nextLine();
-        Collection<Spend> result = controller.searchByName(name); // Trả về kết quả
+
+        Map<Integer, Spend> result = controller.searchByName(name);
+
         if (result.isEmpty()) {
-            System.out.println("Không tìm thấy!");
+            System.out.println("Không tìm thấy chi tiêu nào khớp!");
         } else {
-            displaySpend(result); // Gọi View để hiển thị
+            System.out.println("Kết quả tìm được:");
+            for (Map.Entry<Integer, Spend> entry : result.entrySet()) {
+                display(entry.getValue());
+            }
         }
     }
+
+
 
     private void searchByCode() {
         System.out.println("====TÌM CHI TIÊU THEO MÃ====");
         System.out.print("Nhập mã cần tìm: ");
         int code = scanner.nextInt();
         scanner.nextLine();
-        Spend spend = controller.searchByCode(code); // Trả về đối tượng
+        Spend spend = controller.searchByCode(code);
         if (spend == null) {
             System.out.println("Không tìm thấy mã này!");
         } else {
@@ -89,12 +87,12 @@ public class SpendView {
         System.out.print("Nhập mã chi tiêu: ");
         int code = scanner.nextInt();
         scanner.nextLine();
-        Spend spend = input(code);
-        boolean added = controller.add(spend); // truyền vào từ view
-        if (added) {
-            System.out.println("Thêm thành công!");
-        } else {
+        if (controller.isCodeExist(code)) {
             System.out.println("Mã đã tồn tại!");
+        } else {
+            Spend spend = input(code);
+            Spend success = controller.add(spend);
+            System.out.println("Thêm thành công!");
         }
     }
 
@@ -103,11 +101,19 @@ public class SpendView {
         System.out.print("Nhập mã chi tiêu cần xoá: ");
         int code = scanner.nextInt();
         scanner.nextLine();
-        boolean deleted = controller.delete(code);
-        if (deleted) {
-            System.out.println("Xoá thành công!");
-        } else {
-            System.out.println("Không tìm thấy mã!");
+
+        if (controller.isCodeExist(code)){
+            System.out.println("Xác nhận (y/n): ");
+            String confirm = scanner.nextLine().toLowerCase();
+            switch (confirm) {
+                case ("y") -> {
+                    controller.delete(code);
+                    System.out.println("Xoá thành công!");
+                }
+                case ("n") -> System.out.println("Đã huỷ thao tác!");
+            }
+        }else {
+            System.out.println("Mã không tồn tại!");
         }
     }
 
@@ -116,12 +122,12 @@ public class SpendView {
         System.out.print("Nhập mã cần sửa: ");
         int code = scanner.nextInt();
         scanner.nextLine();
-        Spend spend = input(code);
-        boolean updated = controller.update(spend);
-        if (updated) {
-            System.out.println("Sửa thành công!");
-        } else {
-            System.out.println("Không tìm thấy mã!");
+        if (controller.isCodeExist(code)) {
+            Spend spend = input(code);
+            controller.update(code, spend);
+            System.out.println("Cập nhật thành công!");
+        }else {
+            System.out.println("Mã không tồn tại!");
         }
     }
 

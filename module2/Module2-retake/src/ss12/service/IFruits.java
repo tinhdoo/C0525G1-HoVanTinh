@@ -3,8 +3,8 @@ import ss12.entity.Fruits;
 import java.util.Map;
 
 public interface IFruits {
-    void add(int id);
+    Fruits add(int id);
     void delete(int id);
-    void update(int id);
+    Fruits update(int id, Fruits fruits);
     Map<Integer, Fruits> getAllFruits();
 }

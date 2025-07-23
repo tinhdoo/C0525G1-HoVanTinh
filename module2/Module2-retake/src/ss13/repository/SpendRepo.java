@@ -28,37 +28,33 @@ public class SpendRepo {
         listSpend.remove(code);
     }
 
-    public void update(int code) {
-        Spend spend = listSpend.get(code);
-        if (spend != null) {
-            spend.setName(spend.getName() + " (đã cập nhật)");
-            listSpend.put(code, spend);
-        }
+    public void update(int code, Spend spend) {
+        listSpend.replace(code, spend);
     }
 
-    public void searchByCode(int code) {
+    public Spend searchByCode(int code) {
         Spend spend = listSpend.get(code);
-        if (spend != null) {
-            System.out.println(spend);
-        } else {
-            System.out.println("Không tìm thấy mã " + code);
-        }
+        return spend;
     }
 
-    public void searchByName(String name) {
-        boolean found = false;
-        for (Spend spend : listSpend.values()) {
-            if (spend.getName().toLowerCase().contains(name.toLowerCase())) {
-                System.out.println(spend);
-                found = true;
+    public Map<Integer, Spend> searchByName(String name) {
+        Map<Integer, Spend> result = new HashMap<>();
+        for (Map.Entry<Integer, Spend> entry : listSpend.entrySet()) {
+            if (entry.getValue().getName().toLowerCase().contains(name.toLowerCase())) {
+                result.put(entry.getKey(), entry.getValue());
             }
         }
-        if (!found) {
-            System.out.println("Không tìm thấy chi tiêu có tên chứa: " + name);
-        }
+        return result;
     }
 
+
+
     public boolean isCodeExist(int code) {
-        return listSpend.containsKey(code);
+        for (Spend spend : listSpend.values()) {
+            if (spend.getCode() == code) {
+                return true;
+            }
+        }
+        return false;
     }
 }
