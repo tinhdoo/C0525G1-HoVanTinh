@@ -1,13 +1,17 @@
 package ss12.controller;
 
+import ss12.entity.Fruits;
 import ss12.repository.FruitsRepo;
-import ss12.service.ImplFruits;
+import ss12.service.FruitService;
+import ss12.view.FruitsView;
+
+import java.util.Map;
 import java.util.Scanner;
 
-public class FruitsController{
+public class FruitsController {
     public static final FruitsRepo repo = new FruitsRepo();
     private static final Scanner scanner = new Scanner(System.in);
-    ImplFruits implFruits = new ImplFruits();
+    FruitService service = new FruitService();
 
     public void run() {
         while (true) {
@@ -20,11 +24,27 @@ public class FruitsController{
             int s = scanner.nextInt();
             switch (s) {
                 case 1 -> {
-                    implFruits.showAllFruits(repo.fruits);
+                    showAll();
                 }
-                case 2 -> implFruits.add();
-                case 3 -> implFruits.delete();
-                case 4 -> implFruits.update();
+                case 2 -> {
+                    System.out.println("-----THÊM TRÁI CÂY-----");
+                    System.out.print("Nhập id: ");
+                    int id = scanner.nextInt();
+                    service.add(id);
+                }
+                case 3 -> {
+                    System.out.println("-----XOÁ TRÁI CÂY-----");
+                    System.out.println("Nhập id cần xoá: ");
+                    int id = scanner.nextInt();
+                    service.delete(id);
+                }
+                case 4 -> {
+                    System.out.println("-----SỬA THÔNG TIN TRÁI CÂY-----");
+                    System.out.print("Nhập id cần sửa: ");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+                    service.update(id);
+                }
                 case 5 -> {
                     System.out.println("Tạm biệt!");
                     System.exit(0);
@@ -33,6 +53,11 @@ public class FruitsController{
             }
         }
     }
+    public void showAll() {
+        Map<Integer, Fruits> all = service.getAllFruits();
+        FruitsView.displayFruitsII(all);
+    }
+
 }
 
 

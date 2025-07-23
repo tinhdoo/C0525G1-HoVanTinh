@@ -3,17 +3,13 @@ package ss12.service;
 import ss12.entity.Fruits;
 import ss12.view.FruitsView;
 import java.util.Map;
-import java.util.Scanner;
 import static ss12.controller.FruitsController.repo;
 
-public class ImplFruits implements IFruits {
-    static Scanner scanner = new Scanner(System.in);
+public class FruitService implements IFruits {
 
     @Override
-    public void add() {
-        System.out.println("-----THÊM TRÁI CÂY-----");
-        System.out.print("Nhập id: ");
-        int id = scanner.nextInt();
+    public void add(int id) {
+
         if (repo.isIdExist(id)) {
             System.out.println("Id đã tồn tại!");
             System.out.println("-----------------------");
@@ -25,11 +21,8 @@ public class ImplFruits implements IFruits {
     }
 
     @Override
-    public void delete() {
-        System.out.println("-----XOÁ TRÁI CÂY-----");
+    public void delete(int id) {
 
-        System.out.println("Nhập id cần xoá: ");
-        int id = scanner.nextInt();
         if (repo.isIdExist(id)) {
             repo.fruits.remove(id);
             System.out.println("Xoá thành công!");
@@ -41,12 +34,7 @@ public class ImplFruits implements IFruits {
     }
 
     @Override
-    public void update() {
-        System.out.println("-----SỬA THÔNG TIN TRÁI CÂY-----");
-        System.out.print("Nhập id cần sửa: ");
-        int id = scanner.nextInt();
-        scanner.nextLine();
-
+    public void update(int id) {
         if (repo.isIdExist(id)) {
             Fruits fruits = FruitsView.input(id);
             repo.fruits.replace(id, fruits);
@@ -58,13 +46,8 @@ public class ImplFruits implements IFruits {
     }
 
     @Override
-    public void showAllFruits(Map<Integer, Fruits> fruits) {
-        if (fruits.isEmpty()) {
-            System.out.println("Danh sách trái cây trống.");
-            return;
-        } else {
-            FruitsView.displayFruitsII(fruits);
-        }
+    public Map<Integer, Fruits> getAllFruits() {
+        return repo.fruits;
     }
 
 }
