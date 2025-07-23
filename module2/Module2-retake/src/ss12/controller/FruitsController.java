@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class FruitsController {
-    public static final FruitsRepo repo = new FruitsRepo();
     private static final Scanner scanner = new Scanner(System.in);
     FruitService service = new FruitService();
 
