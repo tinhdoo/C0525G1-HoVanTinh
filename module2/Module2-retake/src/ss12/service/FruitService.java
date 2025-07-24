@@ -1,16 +1,16 @@
 package ss12.service;
 
 import ss12.entity.Fruits;
-import ss13.repository.SpendRepo;
+import ss12.repository.FruitsRepo;
 
 import java.util.Map;
 
 public class FruitService implements IFruits {
-SpendRepo repo = new SpendRepo();
+    FruitsRepo repo = new FruitsRepo();
 
     @Override
-    public Fruits add(int id) {
-           return repo.add();
+    public Fruits add(int code, Fruits fruit) {
+           return repo.add(code, fruit);
     }
 
     @Override
@@ -19,8 +19,8 @@ SpendRepo repo = new SpendRepo();
     }
 
     @Override
-    public Fruits update(int id, Fruits fruits) {
-        return repo.update(id, fruits);
+    public Fruits update(int id, Fruits fruit) {
+        return repo.update(id, fruit);
     }
 
     @Override
