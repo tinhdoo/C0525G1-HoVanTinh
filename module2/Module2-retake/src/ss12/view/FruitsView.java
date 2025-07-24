@@ -1,14 +1,15 @@
 package ss12.view;
 
+import ss12.controller.FruitsController;
 import ss12.entity.Fruits;
-
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Map;
 import java.util.Scanner;
 
 public class FruitsView {
     private static final Scanner scanner = new Scanner(System.in);
-
+    FruitsController controller = new FruitsController();
     public void run() {
         while (true) {
             System.out.println("1. Hiển thị danh sách");
@@ -33,12 +34,15 @@ public class FruitsView {
     }
 
     private void showAll() {
+        displayFruits(controller.getAllFruits());
     }
 
     private void add() {
         System.out.println("-----THÊM TRÁI CÂY-----");
         System.out.print("Nhập id: ");
         int id = scanner.nextInt();
+        Fruits fruit = FruitsView.input(id);
+        controller.add(fruit);
     }
 
     private void update() {
@@ -46,19 +50,21 @@ public class FruitsView {
         System.out.print("Nhập id cần sửa: ");
         int id = scanner.nextInt();
         scanner.nextLine();
+        Fruits newFruit = input(id);
+        controller.update(id,newFruit);
     }
 
     private void delete() {
         System.out.println("-----XOÁ TRÁI CÂY-----");
         System.out.println("Nhập id cần xoá: ");
         int id = scanner.nextInt();
+        controller.delete(id);
     }
 
-    public static void displayFruits(Map<Integer, Fruits> fruits) {
+    public static void displayFruits(Collection<Fruits> fruits) {
         System.out.println("----------------------------DANH SÁCH TRÁI CÂY----------------------------");
 
-        for (Map.Entry<Integer, Fruits> entry : fruits.entrySet()) {
-            Fruits fruit = entry.getValue();
+        for (Fruits fruit : fruits) {
             System.out.print(fruit.getId() + " - ");
             System.out.print(fruit.getName() + " - ");
             System.out.print(fruit.getType() + " - ");

@@ -3,6 +3,7 @@ package ss12.repository;
 import ss12.entity.Fruits;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,8 +25,8 @@ public class FruitsRepo {
         return false;
     }
 
-    public Fruits add(int id, Fruits fruit) {
-        return fruits.put(id,fruit);
+    public Fruits add(Fruits fruit) {
+        return fruits.put(fruit.getId(),fruit);
     }
     public Fruits update(int id, Fruits fruit){
         return fruits.replace(id, fruit);
@@ -33,5 +34,9 @@ public class FruitsRepo {
 
     public void delete(int id) {
         fruits.remove(id);
+    }
+
+    public Collection<Fruits> getAllFruits() {
+        return fruits.values();
     }
 }
