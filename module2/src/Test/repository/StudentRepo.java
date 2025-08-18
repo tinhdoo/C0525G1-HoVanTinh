@@ -43,8 +43,6 @@ public class StudentRepo {
         }
         return list;
     }
-
-
     public void add(Student s) {
         students.add(s);
         writeToCSV();
