@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách sản phẩm</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<h1>Danh sách sản phẩm</h1>
+
+<div>
+  <form th:action="@{/products}" method="get">
+    <input type="text" name="name" placeholder="Tìm theo tên..."
+           th:value="${name}" />
+    <button type="submit">Tìm</button>
+    <a th:href="@{/products}">Xóa filter</a>
+  </form>
+</div>
+
+<div style="margin-top:10px;">
+  <a th:href="@{/products/create}">+ Tạo sản phẩm mới</a>
+</div>
+
+<table border="1" cellpadding="6" cellspacing="0" style="margin-top:10px;">
+  <thead>
+  <tr>
+    <th>#</th><th>Tên</th><th>Giá</th><th>Số lượng</th><th>Hành động</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="p, iterStat : ${productPage.content}">
+    <td th:text="${iterStat.index + 1 + (productPage.number * productPage.size)}">1</td>
+    <td th:text="${p.name}">Tên</td>
+    <td th:text="${p.price}">0</td>
+    <td th:text="${p.quantity}">0</td>
+    <td>
+      <a th:href="@{'/products/view/' + ${p.id}}">Xem</a> |
+      <a th:href="@{'/products/edit/' + ${p.id}}">Sửa</a> |
+      <form th:action="@{'/products/delete/' + ${p.id}}" method="post" th:object="${p}"
+            style="display:inline" onsubmit="return confirm('Xóa sản phẩm này?');">
+        <button type="submit">Xóa</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- pagination đơn giản -->
+<div style="margin-top:10px;">
+        <span th:if="${productPage.totalPages > 1}">
+            <a th:if="${!productPage.first}" th:href="@{/products(page=${productPage.number-1}, name=${name})}">Prev</a>
+            <span> Trang <span th:text="${productPage.number + 1}">1</span> / <span th:text="${productPage.totalPages}">1</span> </span>
+            <a th:if="${!productPage.last}" th:href="@{/products(page=${productPage.number+1}, name=${name})}">Next</a>
+        </span>
+</div>
+</body>
+</html>
