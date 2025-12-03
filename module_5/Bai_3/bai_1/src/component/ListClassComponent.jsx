@@ -42,7 +42,7 @@ class ListClassComponent extends Component{
         })
     }
     closeModal =()=>{
-        this.setState({
+        this.setState({   //khi setState thay đổi, thì toàn bộ component sẽ render lại từ đầu
             showModal: false,
         })
     }
