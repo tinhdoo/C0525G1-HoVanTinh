@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {addNew, deletePlayer, getAllPlayers, searchPlayer} from "../service/players.jsx";
 import DeleteComponent from "./DeleteComponent.jsx";
+import {useNavigate} from "react-router-dom";
 
 const ListComponent = () => {
     const [players, setPlayers] = useState(null);
@@ -16,10 +17,14 @@ const ListComponent = () => {
     const priceRef = useRef(null);
     const positionRef = useRef(null);
 
+    const navigate = useNavigate();
+
+    // Load danh sách
     useEffect(() => {
         setPlayers(getAllPlayers());
     }, [reloading]);
 
+    // Tìm kiếm
     const handleSearchPlayer = () => {
         if (!search.trim()) {
             setPlayers(getAllPlayers());
@@ -28,16 +33,19 @@ const ListComponent = () => {
         }
     };
 
+    // Mở modal xóa
     const handleShowModal = (player) => {
         setDeletePlayers(player);
         setShowModal(true);
     };
 
+    // Đóng modal
     const closeModal = () => {
         setReloading(prev => !prev);
         setShowModal(false);
     };
 
+    // Thêm cầu thủ
     const handleAddPlayer = () => {
         const newPlayer = {
             id: idRef.current.value,
@@ -51,7 +59,6 @@ const ListComponent = () => {
         addNew(newPlayer);
         setReloading(prev => !prev);
 
-        // Clear form
         idRef.current.value = "";
         codeRef.current.value = "";
         nameRef.current.value = "";
@@ -131,7 +138,7 @@ const ListComponent = () => {
                         className="form-control form-control-custom border-0"
                         placeholder="Tìm kiếm theo tên, mã cầu thủ..."
                         onChange={(e) => setSearch(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && handleSearchPlayer()}
+                        onKeyPress={(e) => e.key === "Enter" && handleSearchPlayer()}
                     />
                     <button onClick={handleSearchPlayer} className="btn btn-search px-4">
                         <i className="fas fa-search me-2"></i>
@@ -162,29 +169,46 @@ const ListComponent = () => {
                             <th>Ngày Sinh</th>
                             <th>Giá Chuyển Nhượng</th>
                             <th>Vị Trí</th>
-                            <th style={{width: '100px'}}>Thao Tác</th>
+                            <th style={{width: '120px'}}>Thao Tác</th>
                         </tr>
                         </thead>
+
                         <tbody>
                         {players?.length > 0 ? (
                             players.map((player, i) => (
                                 <tr key={player.id} className="table-row-hover">
+
                                     <td><span className="badge bg-secondary">{i + 1}</span></td>
                                     <td><strong>{player.code}</strong></td>
+
                                     <td className="text-start">
                                         <i className="fas fa-user-circle me-2 text-primary"></i>
                                         {player.name}
                                     </td>
+
                                     <td>{player.dob}</td>
+
                                     <td>
                                         <span className="badge bg-success fs-6">
                                             ${player.price?.toLocaleString()}
                                         </span>
                                     </td>
+
                                     <td>
                                         <span className="position-badge">{player.position}</span>
                                     </td>
-                                    <td>
+
+                                    <td className="d-flex gap-2">
+
+                                        {/* EDIT */}
+                                        <button
+                                            className="btn btn-warning btn-sm"
+                                            onClick={() => navigate(`/edit/${player.id}`)}
+                                        >
+                                            <i className="fas fa-edit"></i>
+                                        </button>
+
+                                        {/* DELETE */}
                                         <button
                                             className="btn btn-delete btn-sm"
                                             onClick={() => handleShowModal(player)}
@@ -192,6 +216,7 @@ const ListComponent = () => {
                                             <i className="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
+
                                 </tr>
                             ))
                         ) : (
@@ -207,7 +232,7 @@ const ListComponent = () => {
                 </div>
             </div>
 
-            {/* Modal */}
+            {/* Modal xoá */}
             {showModal && (
                 <DeleteComponent
                     deleteTarget={deletePlayers}
