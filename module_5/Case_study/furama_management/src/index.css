@@ -1,0 +1,19 @@
+
+:root {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  display: block;
+}

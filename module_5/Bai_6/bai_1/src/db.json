@@ -1,0 +1,26 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "code": "CT001",
+      "name": "Lionel Messi",
+      "dob": "1987-06-24",
+      "price": 500000000,
+      "positionId": 1
+    },
+    {
+      "id": 2,
+      "code": "CT002",
+      "name": "Virgil van Dijk",
+      "dob": "1991-07-08",
+      "price": 300000000,
+      "positionId": 2
+    }
+  ],
+  "positions": [
+    { "id": 1, "name": "Tiền đạo" },
+    { "id": 2, "name": "Hậu vệ" },
+    { "id": 3, "name": "Thủ môn" },
+    { "id": 4, "name": "Tiền vệ" }
+  ]
+}
